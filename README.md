@@ -68,13 +68,32 @@ Opzionale: `VITE_HIDE_AUTH_BUTTONS=true` nasconde **Accedi** / **Registrati** ne
 
 Domande caricate da `questions.json` (aperta / multipla con `opzioni`).
 
-## Produzione (opzionale)
+## Build e deploy
 
-```bash
-cd frontend && npm run build
-# copia frontend/dist in backend/EffettoMandria.Api/wwwroot
-cd ../backend/EffettoMandria.Api && dotnet run
+Da root del repo (PowerShell):
+
+```powershell
+.\build.ps1
 ```
+
+Lo script:
+
+1. Compila il **frontend** con `VITE_API_BASE_URL` vuoto (stesso schema del **reverse proxy Vite** in dev: tutto su un host, `/api` e `/hubs`).
+2. Esegue **`dotnet publish`** del backend in `./publish`.
+3. Copia `frontend/dist` in `publish/wwwroot`.
+
+Avvio della build pubblicata (es. party su LAN):
+
+```powershell
+cd publish
+dotnet EffettoMandria.Api.dll
+```
+
+Environment e URL sono in `backend/EffettoMandria.Api/appsettings.Production.json` (`Hosting:Environment`, `Hosting:Urls`, `Kestrel`). In publish viene copiato accanto al DLL; non servono variabili d'ambiente (salvo override).
+
+Apri `http://<IP-del-server>:5080` da PC e telefoni.
+
+Opzioni: `.\build.ps1 -OutputDir .\out` · `.\build.ps1 -SkipNpmInstall`
 
 ## Struttura
 

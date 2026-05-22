@@ -2,6 +2,8 @@ using EffettoMandria.Api;
 using EffettoMandria.Api.Hubs;
 using EffettoMandria.Api.Services;
 
+HostingBootstrap.ApplyFromAppSettings(args);
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<InMemoryStore>();

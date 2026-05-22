@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useDirectorStart } from '../composables/useDirectorStart'
 import { hideAuthButtons } from '../config/features'
@@ -14,15 +13,9 @@ const {
   loading,
   hasCurrentGame,
   isAlreadyInGameError,
-  startAsGuestDirector,
-  createGameWithCurrentUser,
   resumeCurrentGame,
   createNewGame,
 } = useDirectorStart()
-
-const hasAccount = computed(
-  () => auth.isLoggedIn && auth.user != null && !auth.user.isGuest
-)
 </script>
 
 <template>

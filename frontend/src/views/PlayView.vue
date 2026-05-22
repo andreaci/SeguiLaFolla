@@ -166,7 +166,7 @@ async function submitAnswer(text: string) {
   </section>
   <p v-else class="text-muted text-center">Caricamento…</p>
 
-  <RoundResultModal v-if="game?.phase === 'results'" :game="game" />
+  <RoundResultModal v-if="game?.phase === 'results'" :game="game" :game-id="gameId" />
 </template>
 
 <style scoped>

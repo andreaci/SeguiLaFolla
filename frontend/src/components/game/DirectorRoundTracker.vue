@@ -52,7 +52,7 @@ function buildRow(p: PlayerState): TrackerRow {
     displayName: p.displayName,
     answered,
     answerText: answered ? answerByUserId.value.get(p.userId) : undefined,
-    hasActivePenalty: p.hasActivePenalty,
+    hasActivePenalty: p.hasActivePenalty ?? false,
   }
 }
 
