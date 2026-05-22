@@ -1,0 +1,296 @@
+.card {
+  background: var(--color-surface);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow);
+}
+
+.card--flat {
+  box-shadow: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.65rem 1.25rem;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+  box-shadow: 3px 3px 0 var(--color-border);
+}
+
+.btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--color-border);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.btn--secondary {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.btn--danger {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: var(--color-accent);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.field {
+  margin-bottom: var(--space-md);
+}
+
+.field label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.alert {
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+  border: 3px solid var(--color-border);
+}
+
+.alert--error {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+.alert--info {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 2px solid var(--color-border);
+}
+
+.badge--lobby { background: var(--color-bg); color: var(--color-text); }
+.badge--answering { background: var(--color-accent-soft); color: var(--color-text); }
+.badge--voting { background: var(--color-accent); color: var(--color-text); }
+.badge--results { background: var(--color-bg); color: var(--color-text); }
+.badge--finished { background: var(--color-accent); color: var(--color-text); }
+
+.player-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.player-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 2px dashed var(--color-border);
+}
+
+.player-list li:last-child {
+  border-bottom: none;
+}
+
+.player-list__name {
+  font-weight: 700;
+}
+
+.player-list__meta {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.question-box {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: var(--space-lg);
+  background: var(--color-accent-soft);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow);
+}
+
+.option-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.option-btn {
+  text-align: left;
+  padding: var(--space-md);
+  background: var(--color-bg);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 2px 2px 0 var(--color-border);
+}
+
+.option-btn:hover:not(:disabled),
+.option-btn--selected {
+  border-color: var(--color-border);
+  background: var(--color-accent);
+}
+
+.option-btn:disabled,
+.option-btn--locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.option-btn--selected.option-btn--locked {
+  opacity: 1;
+  border-color: var(--color-border);
+  background: var(--color-accent-soft);
+}
+
+.answer-form--waiting .option-grid,
+.answer-form--waiting form {
+  pointer-events: none;
+}
+
+.answer-form__status {
+  margin: 0 0 var(--space-md);
+  padding: var(--space-md);
+  text-align: center;
+  font-weight: 800;
+  color: var(--color-text);
+  background: var(--color-accent);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.answer-form--waiting .input:disabled {
+  opacity: 0.9;
+  border-color: var(--color-border);
+  background: var(--color-accent-soft);
+}
+
+.vote-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.vote-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--color-bg);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vote-item:hover:not(.vote-item--mine):not(.vote-item--disabled) {
+  background: var(--color-accent-soft);
+}
+
+.vote-item--mine,
+.vote-item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vote-item--chosen {
+  background: var(--color-accent);
+}
+
+.qr-panel {
+  text-align: center;
+}
+
+.qr-panel img {
+  max-width: 220px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  padding: var(--space-sm);
+  border: 3px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.home-panel__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.home-panel__actions .btn {
+  width: 100%;
+}
