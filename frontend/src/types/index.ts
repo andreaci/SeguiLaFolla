@@ -33,6 +33,7 @@ export interface AnswerState {
   text: string
   voteCount: number
   isMine: boolean
+  authorUserId?: string
   authorName?: string
   revealAuthor: boolean
 }

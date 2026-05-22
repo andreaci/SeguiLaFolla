@@ -272,15 +272,18 @@ public class GameService
         if (game.Phase == GamePhase.Lobby || game.Phase == GamePhase.Answering)
         {
             if (!isDirector) return [];
-            return GetParticipatingPlayers(game)
-                .Select(p => new AnswerStateDto
+            return game.CurrentAnswers.Select(a =>
+            {
+                game.Players.TryGetValue(a.AuthorUserId, out var author);
+                return new AnswerStateDto
                 {
-                    Id = Guid.Empty,
-                    Text = p.HasSubmittedAnswer ? "✓ Ha risposto" : "… in attesa",
-                    AuthorName = p.DisplayName,
+                    Id = a.Id,
+                    Text = a.Text,
+                    AuthorUserId = a.AuthorUserId,
+                    AuthorName = author?.DisplayName,
                     RevealAuthor = true
-                })
-                .ToList();
+                };
+            }).ToList();
         }
 
         var textCounts = game.CurrentAnswers
@@ -298,6 +301,7 @@ public class GameService
                 Text = a.Text,
                 VoteCount = count,
                 IsMine = viewer?.Id == a.AuthorUserId,
+                AuthorUserId = showAuthor ? a.AuthorUserId : null,
                 AuthorName = showAuthor ? author?.DisplayName : null,
                 RevealAuthor = showAuthor
             };

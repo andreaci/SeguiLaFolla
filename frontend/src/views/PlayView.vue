@@ -116,6 +116,7 @@ async function submitAnswer(text: string) {
       <QuestionDisplay
         :key="roundKey"
         :question="game.currentQuestion"
+        :show-choices="false"
       />
 
       <div v-if="game.phase === 'answering'" class="card">

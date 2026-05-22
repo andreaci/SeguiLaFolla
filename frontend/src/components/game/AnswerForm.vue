@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { QuestionDto } from '../../types'
 import BaseButton from '../ui/BaseButton.vue'
+import ChoiceList from '../ui/ChoiceList.vue'
+import { getQuestionOptions, isMultiplaQuestion } from '../../utils/question'
 
 const props = defineProps<{
   question: QuestionDto
@@ -14,6 +16,9 @@ const emit = defineEmits<{ submit: [text: string] }>()
 
 const text = ref('')
 const locked = () => props.disabled || props.waiting
+
+const multipla = computed(() => isMultiplaQuestion(props.question))
+const options = computed(() => getQuestionOptions(props.question))
 
 watch(
   () => props.submittedText,
@@ -43,22 +48,13 @@ function submitOpen() {
       Attendendo gli altri giocatori…
     </p>
 
-    <div v-if="question.tipo === 'multipla'" class="option-grid">
-      <button
-        v-for="opt in question.opzioni"
-        :key="opt"
-        type="button"
-        class="option-btn"
-        :class="{
-          'option-btn--selected': waiting && submittedText === opt,
-          'option-btn--locked': waiting,
-        }"
-        :disabled="locked()"
-        @click="pickOption(opt)"
-      >
-        {{ opt }}
-      </button>
-    </div>
+    <ChoiceList
+      v-if="multipla && options.length"
+      :options="options"
+      :disabled="locked()"
+      :selected="waiting ? submittedText : null"
+      @select="pickOption"
+    />
     <form v-else @submit.prevent="submitOpen">
       <div class="field">
         <label for="answer">La tua risposta</label>

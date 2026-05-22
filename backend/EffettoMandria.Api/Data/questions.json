@@ -1,242 +1,2214 @@
 [
-  {"id": 1, "tipo": "aperta", "domanda": "Qual è la migliore bevanda calda?"},
-  {"id": 2, "tipo": "aperta", "domanda": "Qual è l'animale più grande che riusciresti a sollevare?"},
-  {"id": 3, "tipo": "aperta", "domanda": "Se potessi mangiare solo una cosa per sempre, quale sarebbe?"},
-  {"id": 4, "tipo": "aperta", "domanda": "Qual è il peggior odore che esiste?"},
-  {"id": 5, "tipo": "aperta", "domanda": "Qual è il cibo più sopravvalutato al mondo?"},
-  {"id": 6, "tipo": "aperta", "domanda": "Qual è la cosa che quasi tutti fanno ma nessuno ammette?"},
-  {"id": 7, "tipo": "aperta", "domanda": "Qual è il lavoro che sembra facile ma è difficilissimo?"},
-  {"id": 8, "tipo": "aperta", "domanda": "Se gli animali potessero parlare, quale sarebbe il più noioso?"},
-  {"id": 9, "tipo": "aperta", "domanda": "Qual è il rumore più fastidioso che esiste?"},
-  {"id": 10, "tipo": "aperta", "domanda": "Qual è la cosa più inutile che si insegna a scuola?"},
-  {"id": 11, "tipo": "aperta", "domanda": "Qual è il frutto più buono del mondo?"},
-  {"id": 12, "tipo": "aperta", "domanda": "Qual è il dolce più buono che esiste?"},
-  {"id": 13, "tipo": "aperta", "domanda": "Qual è la prima cosa che fai quando ti svegli?"},
-  {"id": 14, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da fare senza usare le mani?"},
-  {"id": 15, "tipo": "aperta", "domanda": "Qual è la cosa più strana che le persone collezionano?"},
-  {"id": 16, "tipo": "aperta", "domanda": "Qual è la cosa che quasi tutti fanno in bagno e non ammettono?"},
-  {"id": 17, "tipo": "aperta", "domanda": "Qual è la cosa più ridicola di cui le persone si vantano?"},
-  {"id": 18, "tipo": "aperta", "domanda": "Qual è l'animale che pensi sia più intelligente di quanto crediamo?"},
-  {"id": 19, "tipo": "aperta", "domanda": "Qual è la cosa che tutti fingono di capire ma non capiscono?"},
-  {"id": 20, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da tenere pulita in casa?"},
-  {"id": 21, "tipo": "aperta", "domanda": "Qual è la cosa che ti fa venire fame solo a sentirne l'odore?"},
-  {"id": 22, "tipo": "aperta", "domanda": "Qual è la cosa più assurda che si potrebbe mettere su una pizza?"},
-  {"id": 23, "tipo": "aperta", "domanda": "Qual è il verso di animale più ridicolo?"},
-  {"id": 24, "tipo": "aperta", "domanda": "Qual è la cosa che quasi tutti fanno mentre guidano e non ammettono?"},
-  {"id": 25, "tipo": "aperta", "domanda": "Qual è l'oggetto che perdi più spesso?"},
-  {"id": 26, "tipo": "aperta", "domanda": "Qual è la cosa più rilassante che esiste?"},
-  {"id": 27, "tipo": "aperta", "domanda": "Qual è il fast food più popolare al mondo?"},
-  {"id": 28, "tipo": "aperta", "domanda": "Qual è il tipo di pasta più amato dagli italiani?"},
-  {"id": 29, "tipo": "aperta", "domanda": "Qual è la pizza con il condimento più popolare in Italia?"},
-  {"id": 30, "tipo": "aperta", "domanda": "Qual è la miglior colazione possibile?"},
-  {"id": 31, "tipo": "aperta", "domanda": "Qual è il miglior pranzo della domenica?"},
-  {"id": 32, "tipo": "aperta", "domanda": "Qual è la cosa più bella che si possa ricevere in regalo?"},
-  {"id": 33, "tipo": "aperta", "domanda": "Qual è il gelato che quasi tutti amano?"},
-  {"id": 34, "tipo": "aperta", "domanda": "Qual è la cosa più inutile che esiste in cucina?"},
-  {"id": 35, "tipo": "aperta", "domanda": "Qual è il paese che produce il vino migliore?"},
-  {"id": 36, "tipo": "aperta", "domanda": "Qual è la cosa più strana che le persone mangiano?"},
-  {"id": 37, "tipo": "aperta", "domanda": "Qual è la cosa che non riusciresti mai a mangiare?"},
-  {"id": 38, "tipo": "aperta", "domanda": "Qual è la cosa più insolita che si mangia in qualche paese del mondo?"},
-  {"id": 39, "tipo": "aperta", "domanda": "Qual è la cosa di cui non puoi fare a meno quando sei in vacanza?"},
-  {"id": 40, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da spiegare a un extraterrestre?"},
-  {"id": 41, "tipo": "aperta", "domanda": "Qual è la cosa più spaventosa che la scienza ha scoperto?"},
-  {"id": 42, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da spiegare senza usare esempi?"},
-  {"id": 43, "tipo": "aperta", "domanda": "Qual è la cosa che ti ha sorpreso di più scoprire da adulto?"},
-  {"id": 44, "tipo": "aperta", "domanda": "Qual è la cosa più utile che hai imparato da internet?"},
-  {"id": 45, "tipo": "aperta", "domanda": "Qual è la cosa che le persone comprano troppo spesso senza bisogno?"},
-  {"id": 46, "tipo": "aperta", "domanda": "Qual è la cosa più inutile che hai comprato negli ultimi sei mesi?"},
-  {"id": 47, "tipo": "aperta", "domanda": "Qual è la cosa più assurda che si potrebbe vendere per un milione di euro?"},
-  {"id": 48, "tipo": "aperta", "domanda": "Qual è la cosa più bella da fare in una giornata di pioggia?"},
-  {"id": 49, "tipo": "aperta", "domanda": "Qual è la cosa più incredibile che la natura è in grado di fare?"},
-  {"id": 50, "tipo": "aperta", "domanda": "Qual è la cosa più bella che si possa vedere in natura?"},
-  {"id": 51, "tipo": "aperta", "domanda": "Qual è il fiore più bello?"},
-  {"id": 52, "tipo": "aperta", "domanda": "Qual è l'albero più bello che esiste?"},
-  {"id": 53, "tipo": "aperta", "domanda": "Qual è il pianeta più interessante del sistema solare oltre alla Terra?"},
-  {"id": 54, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da trovare in natura?"},
-  {"id": 55, "tipo": "aperta", "domanda": "Qual è la cosa che faresti prima se fossi sindaco della tua città?"},
-  {"id": 56, "tipo": "aperta", "domanda": "Qual è la cosa che quasi tutti fanno quando sono da soli in ascensore?"},
-  {"id": 57, "tipo": "aperta", "domanda": "Qual è la cosa più assurda che ti è stata chiesta in un colloquio di lavoro?"},
-  {"id": 58, "tipo": "aperta", "domanda": "Qual è la cosa che non riesci mai a fare bene al primo tentativo?"},
-  {"id": 59, "tipo": "aperta", "domanda": "Qual è la cosa che faresti se sapessi con certezza di non fallire?"},
-  {"id": 60, "tipo": "aperta", "domanda": "Qual è la cosa più strana che hai fatto da solo in casa?"},
-  {"id": 61, "tipo": "aperta", "domanda": "Qual è la cosa che ti fa ridere involontariamente?"},
-  {"id": 62, "tipo": "aperta", "domanda": "Qual è la cosa di cui ti vergogni di più di aver comprato?"},
-  {"id": 63, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da fare in silenzio?"},
-  {"id": 64, "tipo": "aperta", "domanda": "Qual è la cosa più stupida che hai fatto per risparmiare soldi?"},
-  {"id": 65, "tipo": "aperta", "domanda": "Qual è la cosa più assurda che si potrebbe ordinare in un bar?"},
-  {"id": 66, "tipo": "aperta", "domanda": "Qual è la cosa che hai sempre voluto imparare ma non hai mai iniziato?"},
-  {"id": 67, "tipo": "aperta", "domanda": "Qual è la cosa che ti dà più ansia nella vita moderna?"},
-  {"id": 68, "tipo": "aperta", "domanda": "Qual è la cosa che vorresti che i tuoi figli imparassero prima di tutto?"},
-  {"id": 69, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da fare con i guanti?"},
-  {"id": 70, "tipo": "aperta", "domanda": "Qual è la cosa più inutile che il corpo umano fa?"},
-  {"id": 71, "tipo": "aperta", "domanda": "Qual è la cosa più buffa che fa un animale?"},
-  {"id": 72, "tipo": "aperta", "domanda": "Qual è l'animale che vorresti che non esistesse?"},
-  {"id": 73, "tipo": "aperta", "domanda": "Qual è l'insetto che ti spaventa di più?"},
-  {"id": 74, "tipo": "aperta", "domanda": "Qual è l'animale che ti spaventa di più in natura?"},
-  {"id": 75, "tipo": "aperta", "domanda": "Qual è l'uccello più bello del mondo?"},
-  {"id": 76, "tipo": "aperta", "domanda": "Se potessi eliminare un insetto dal pianeta, quale sarebbe?"},
-  {"id": 77, "tipo": "aperta", "domanda": "Qual è l'animale che probabilmente vincerebbe le elezioni se potesse candidarsi?"},
-  {"id": 78, "tipo": "aperta", "domanda": "Se potessi scegliere una mascotte animale per l'Italia, quale sarebbe?"},
-  {"id": 79, "tipo": "aperta", "domanda": "Qual è il superpotere più utile nella vita di tutti i giorni?"},
-  {"id": 80, "tipo": "aperta", "domanda": "Se potessi aggiungere un senso al corpo umano, quale sarebbe?"},
-  {"id": 81, "tipo": "aperta", "domanda": "Se potessi avere un dono artistico istantaneo, quale sarebbe?"},
-  {"id": 82, "tipo": "aperta", "domanda": "Se potessi imparare istantaneamente uno sport, quale sceglieresti?"},
-  {"id": 83, "tipo": "aperta", "domanda": "Se potessi essere esperto in qualsiasi materia istantaneamente, quale sceglieresti?"},
-  {"id": 84, "tipo": "aperta", "domanda": "Qual è la prima cosa che compreresti se vincessi alla lotteria?"},
-  {"id": 85, "tipo": "aperta", "domanda": "Qual è il lavoro che guadagna più di quanto meriti?"},
-  {"id": 86, "tipo": "aperta", "domanda": "Qual è il mestiere che vorresti fare se i soldi non fossero un problema?"},
-  {"id": 87, "tipo": "aperta", "domanda": "Qual è la cosa più divertente che si possa fare con 100 euro?"},
-  {"id": 88, "tipo": "aperta", "domanda": "Qual è la cosa che compreresti subito se costasse la metà?"},
-  {"id": 89, "tipo": "aperta", "domanda": "Qual è la cosa più strana che si vende su internet?"},
-  {"id": 90, "tipo": "aperta", "domanda": "Se avessi un milione di euro da spendere in 24 ore, cosa compreresti per primo?"},
-  {"id": 91, "tipo": "aperta", "domanda": "Se potessi avere un negozio gratuito per un giorno, quale sarebbe?"},
-  {"id": 92, "tipo": "aperta", "domanda": "Qual è il marchio di auto più desiderato?"},
-  {"id": 93, "tipo": "aperta", "domanda": "Qual è la cosa che compreresti solo per fare scena?"},
-  {"id": 94, "tipo": "aperta", "domanda": "Se potessi spostare il tuo paese in un altro posto del mondo, dove lo metteresti?"},
-  {"id": 95, "tipo": "aperta", "domanda": "Se potessi rinominare una città italiana, quale sceglieresti?"},
-  {"id": 96, "tipo": "aperta", "domanda": "Se potessi eliminare una parola dalla lingua italiana, quale sarebbe?"},
-  {"id": 97, "tipo": "aperta", "domanda": "Se potessi inventare un nuovo colore, come si chiamerebbe?"},
-  {"id": 98, "tipo": "aperta", "domanda": "Se potessi creare una nuova festività nazionale, cosa si celebrerebbe?"},
-  {"id": 99, "tipo": "aperta", "domanda": "Se gli alberi potessero parlare, di cosa si lamenterebbero?"},
-  {"id": 100, "tipo": "aperta", "domanda": "Se il sole avesse un sapore, di cosa saprebbe?"},
-  {"id": 101, "tipo": "aperta", "domanda": "Se il mare fosse fatto di qualcosa che non sia acqua, di cosa sarebbe fatto?"},
-  {"id": 102, "tipo": "aperta", "domanda": "Se i colori avessero un sapore, di cosa saprebbe il rosso?"},
-  {"id": 103, "tipo": "aperta", "domanda": "Se potessi far parlare un oggetto di casa tua, quale sceglieresti?"},
-  {"id": 104, "tipo": "aperta", "domanda": "Se gli animali avessero un'economia, quale sarebbe la valuta?"},
-  {"id": 105, "tipo": "aperta", "domanda": "Qual è la cosa più spaventosa che potrebbe uscire da sotto il letto?"},
-  {"id": 106, "tipo": "aperta", "domanda": "Qual è la cosa più romantica e inutile che si potrebbe fare?"},
-  {"id": 107, "tipo": "aperta", "domanda": "Se potessi clonare te stesso, qual è la prima cosa che gli faresti fare?"},
-  {"id": 108, "tipo": "aperta", "domanda": "Se potessi dare un nome a un nuovo pianeta, quale sarebbe?"},
-  {"id": 109, "tipo": "aperta", "domanda": "Qual è la cosa che gli italiani fanno meglio di tutti nel mondo?"},
-  {"id": 110, "tipo": "aperta", "domanda": "Qual è la cosa più incredibile che un essere umano abbia mai fatto?"},
-  {"id": 111, "tipo": "aperta", "domanda": "Qual è la cosa più ridicola che le persone fanno per sembrare fighe?"},
-  {"id": 112, "tipo": "aperta", "domanda": "Qual è la cosa di cui le persone si pentono di più nella vita?"},
-  {"id": 113, "tipo": "aperta", "domanda": "Qual è la cosa che faresti se sapessi che nessuno ti guarda?"},
-  {"id": 114, "tipo": "aperta", "domanda": "Qual è la cosa più bizzarra che hai fatto da solo in casa?"},
-  {"id": 115, "tipo": "aperta", "domanda": "Qual è la cosa che quasi tutti mentono su di sé?"},
-  {"id": 116, "tipo": "aperta", "domanda": "Qual è la cosa che le persone fingono di amare ma in realtà odiano?"},
-  {"id": 117, "tipo": "aperta", "domanda": "Qual è il numero di calzini persi in casa tua ogni anno?"},
-  {"id": 118, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da fare con gli occhi chiusi?"},
-  {"id": 119, "tipo": "aperta", "domanda": "Qual è la cosa più assurda di cui due persone potrebbero litigare?"},
-  {"id": 120, "tipo": "aperta", "domanda": "Se potessi scegliere il tuo soprannome, quale sarebbe?"},
-  {"id": 121, "tipo": "aperta", "domanda": "Se potessi fare una sola domanda al Presidente della Repubblica, quale sarebbe?"},
-  {"id": 122, "tipo": "aperta", "domanda": "Se potessi riscrivere la fine di qualsiasi film, quale sceglieresti?"},
-  {"id": 123, "tipo": "aperta", "domanda": "Qual è il continente che vorresti esplorare?"},
-  {"id": 124, "tipo": "aperta", "domanda": "Se potessi vivere in qualsiasi città del mondo, quale sceglieresti?"},
-  {"id": 125, "tipo": "aperta", "domanda": "Se ti regalassero 10.000 euro da usare solo per viaggiare, dove andresti?"},
-  {"id": 126, "tipo": "aperta", "domanda": "Qual è il cibo perfetto per una serata sul divano?"},
-  {"id": 127, "tipo": "aperta", "domanda": "Qual è la cosa che gli esseri umani fanno di più strano rispetto agli altri animali?"},
-  {"id": 128, "tipo": "aperta", "domanda": "Qual è la cosa più imbarazzante che ti possa capitare in pubblico?"},
-  {"id": 129, "tipo": "aperta", "domanda": "Qual è la cosa peggiore che ti possa capitare in vacanza?"},
-  {"id": 130, "tipo": "aperta", "domanda": "Qual è il numero di cose che hai in questo momento nel frigorifero?"},
-  {"id": 131, "tipo": "aperta", "domanda": "Qual è la cosa che quasi tutti fanno ma non ammettono mai?"},
-  {"id": 132, "tipo": "aperta", "domanda": "Qual è la cosa che non riusciresti a fare per nessuna somma di denaro?"},
-  {"id": 133, "tipo": "aperta", "domanda": "Qual è la cosa più difficile da trovare in un supermercato?"},
-  {"id": 134, "tipo": "aperta", "domanda": "Qual è il sport che richiede più resistenza mentale?"},
-  {"id": 135, "tipo": "aperta", "domanda": "Qual è la cosa che ti fa venire voglia di dormire?"},
-  {"id": 136, "tipo": "aperta", "domanda": "Qual è la cosa più bella che si possa fare il giorno del proprio compleanno?"},
-  {"id": 137, "tipo": "aperta", "domanda": "Qual è la cosa che avresti voluto sapere a 15 anni?"},
-  {"id": 138, "tipo": "aperta", "domanda": "Qual è la cosa più utile che si possa insegnare a un bambino?"},
-  {"id": 139, "tipo": "aperta", "domanda": "Qual è la cosa più divertente da fare sotto la pioggia?"},
-  {"id": 140, "tipo": "aperta", "domanda": "Qual è la cosa più costosa che si potrebbe fare gratis in natura?"},
-  {"id": 141, "tipo": "multipla", "domanda": "Preferiresti avere sempre troppo freddo o sempre troppo caldo?", "opzioni": ["Sempre troppo freddo", "Sempre troppo caldo"]},
-  {"id": 142, "tipo": "multipla", "domanda": "Preferiresti avere le braccia o le gambe bioniche?", "opzioni": ["Braccia bioniche", "Gambe bioniche"]},
-  {"id": 143, "tipo": "multipla", "domanda": "Preferiresti essere invisibile o poter volare?", "opzioni": ["Invisibile", "Volare"]},
-  {"id": 144, "tipo": "multipla", "domanda": "Preferiresti vivere in montagna o al mare?", "opzioni": ["In montagna", "Al mare"]},
-  {"id": 145, "tipo": "multipla", "domanda": "Preferiresti non dormire mai o mangiare solo una volta al giorno?", "opzioni": ["Non dormire mai", "Mangiare una volta al giorno"]},
-  {"id": 146, "tipo": "multipla", "domanda": "Preferiresti dimenticare tutto o ricordare tutto?", "opzioni": ["Dimenticare tutto", "Ricordare tutto"]},
-  {"id": 147, "tipo": "multipla", "domanda": "Preferiresti avere la memoria di un elefante o la velocità di un ghepardo?", "opzioni": ["Memoria di un elefante", "Velocità di un ghepardo"]},
-  {"id": 148, "tipo": "multipla", "domanda": "Preferiresti poter leggere nel pensiero o vedere il futuro?", "opzioni": ["Leggere nel pensiero", "Vedere il futuro"]},
-  {"id": 149, "tipo": "multipla", "domanda": "Preferiresti poter respirare sott'acqua o non sentire mai il freddo?", "opzioni": ["Respirare sott'acqua", "Non sentire mai il freddo"]},
-  {"id": 150, "tipo": "multipla", "domanda": "Preferiresti avere un olfatto da cane o una vista da aquila?", "opzioni": ["Olfatto da cane", "Vista da aquila"]},
-  {"id": 151, "tipo": "multipla", "domanda": "Preferiresti poter parlare con gli animali o con le piante?", "opzioni": ["Con gli animali", "Con le piante"]},
-  {"id": 152, "tipo": "multipla", "domanda": "Preferiresti avere la forza di un gorilla o la velocità di un falco?", "opzioni": ["Forza di un gorilla", "Velocità di un falco"]},
-  {"id": 153, "tipo": "multipla", "domanda": "Preferiresti poter camminare sulle nuvole o sull'acqua?", "opzioni": ["Sulle nuvole", "Sull'acqua"]},
-  {"id": 154, "tipo": "multipla", "domanda": "Preferiresti avere una memoria fotografica o dormire solo 2 ore sentendoti riposato?", "opzioni": ["Memoria fotografica", "Dormire 2 ore"]},
-  {"id": 155, "tipo": "multipla", "domanda": "Preferiresti fermare il tempo o tornare indietro nel tempo?", "opzioni": ["Fermare il tempo", "Tornare indietro"]},
-  {"id": 156, "tipo": "multipla", "domanda": "Preferiresti non avere internet o non avere riscaldamento?", "opzioni": ["Niente internet", "Niente riscaldamento"]},
-  {"id": 157, "tipo": "multipla", "domanda": "Preferiresti vivere senza specchi o senza calendari?", "opzioni": ["Senza specchi", "Senza calendari"]},
-  {"id": 158, "tipo": "multipla", "domanda": "Preferiresti non sentire mai più la tua canzone preferita o ascoltarla solo quella per sempre?", "opzioni": ["Non sentirla mai più", "Solo quella per sempre"]},
-  {"id": 159, "tipo": "multipla", "domanda": "Preferiresti sapere quando morirai o come morirai?", "opzioni": ["Quando", "Come"]},
-  {"id": 160, "tipo": "multipla", "domanda": "Preferiresti vivere 200 anni con salute mediocre o 80 anni in perfetta salute?", "opzioni": ["200 anni con salute mediocre", "80 anni in perfetta salute"]},
-  {"id": 161, "tipo": "multipla", "domanda": "Preferiresti ricevere sempre buone notizie false o sempre brutte notizie vere?", "opzioni": ["Buone notizie false", "Brutte notizie vere"]},
-  {"id": 162, "tipo": "multipla", "domanda": "Preferiresti essere sempre il primo o sempre l'ultimo ad arrivare?", "opzioni": ["Sempre il primo", "Sempre l'ultimo"]},
-  {"id": 163, "tipo": "multipla", "domanda": "Preferiresti mangiare solo cibi dolci o solo cibi salati per sempre?", "opzioni": ["Solo dolci", "Solo salati"]},
-  {"id": 164, "tipo": "multipla", "domanda": "Preferiresti non avere mai più il raffreddore o non avere mai più le allergie?", "opzioni": ["Mai più raffreddore", "Mai più allergie"]},
-  {"id": 165, "tipo": "multipla", "domanda": "Preferiresti non dover mai cucinare o non dover mai fare la spesa?", "opzioni": ["Mai cucinare", "Mai fare la spesa"]},
-  {"id": 166, "tipo": "multipla", "domanda": "Preferiresti avere un cuoco personale o un personal trainer?", "opzioni": ["Cuoco personale", "Personal trainer"]},
-  {"id": 167, "tipo": "multipla", "domanda": "Preferiresti non avere mai più il mal di testa o non avere mai più il mal di stomaco?", "opzioni": ["Mai più mal di testa", "Mai più mal di stomaco"]},
-  {"id": 168, "tipo": "multipla", "domanda": "Preferiresti avere sempre l'ombrello quando piove o non bagnarti mai sotto la pioggia?", "opzioni": ["Avere sempre l'ombrello", "Non bagnarsi mai"]},
-  {"id": 169, "tipo": "multipla", "domanda": "Preferiresti avere un nascondiglio segreto in casa o un passaggio segreto?", "opzioni": ["Nascondiglio segreto", "Passaggio segreto"]},
-  {"id": 170, "tipo": "multipla", "domanda": "Preferiresti avere una casa sulla riva del mare o in cima a una montagna?", "opzioni": ["Riva del mare", "Cima di una montagna"]},
-  {"id": 171, "tipo": "multipla", "domanda": "Preferiresti vivere in una casa sull'albero o in una casa sottomarino?", "opzioni": ["Casa sull'albero", "Casa sottomarino"]},
-  {"id": 172, "tipo": "multipla", "domanda": "Preferiresti avere una casa ordinata ma brutta o caotica ma bella?", "opzioni": ["Ordinata ma brutta", "Caotica ma bella"]},
-  {"id": 173, "tipo": "multipla", "domanda": "Preferiresti dormire su una nuvola o sotto le stelle nel deserto?", "opzioni": ["Su una nuvola", "Nel deserto sotto le stelle"]},
-  {"id": 174, "tipo": "multipla", "domanda": "Preferiresti scoprire vita su Marte o una città sommersa sotto il Pacifico?", "opzioni": ["Vita su Marte", "Città sommersa"]},
-  {"id": 175, "tipo": "multipla", "domanda": "Preferiresti passare una notte nella giungla o in fondo al mare?", "opzioni": ["Nella giungla", "In fondo al mare"]},
-  {"id": 176, "tipo": "multipla", "domanda": "Preferiresti non avere mai più fame o non avere mai più sonno?", "opzioni": ["Mai più fame", "Mai più sonno"]},
-  {"id": 177, "tipo": "multipla", "domanda": "Preferiresti non sentire mai più dolore o non sentire mai più stanchezza?", "opzioni": ["Mai più dolore", "Mai più stanchezza"]},
-  {"id": 178, "tipo": "multipla", "domanda": "Preferiresti non avere mai più odore o non avere mai più gusto?", "opzioni": ["Niente odore", "Niente gusto"]},
-  {"id": 179, "tipo": "multipla", "domanda": "Preferiresti essere troppo alto o troppo basso?", "opzioni": ["Troppo alto", "Troppo basso"]},
-  {"id": 180, "tipo": "multipla", "domanda": "Preferiresti avere capelli sempre perfetti o denti sempre perfetti?", "opzioni": ["Capelli perfetti", "Denti perfetti"]},
-  {"id": 181, "tipo": "multipla", "domanda": "Preferiresti avere un naso grande o orecchie grandi?", "opzioni": ["Naso grande", "Orecchie grandi"]},
-  {"id": 182, "tipo": "multipla", "domanda": "Preferiresti avere mani al posto dei piedi o piedi al posto delle mani?", "opzioni": ["Mani al posto dei piedi", "Piedi al posto delle mani"]},
-  {"id": 183, "tipo": "multipla", "domanda": "Preferiresti avere un cervello da scienziato o un corpo da atleta?", "opzioni": ["Cervello da scienziato", "Corpo da atleta"]},
-  {"id": 184, "tipo": "multipla", "domanda": "Preferiresti essere sempre il più bravo o essere sempre il più simpatico?", "opzioni": ["Sempre il più bravo", "Sempre il più simpatico"]},
-  {"id": 185, "tipo": "multipla", "domanda": "Preferiresti avere sempre ragione ma non essere mai creduto o avere sempre torto ma essere sempre creduto?", "opzioni": ["Sempre ragione, mai creduto", "Sempre torto, sempre creduto"]},
-  {"id": 186, "tipo": "multipla", "domanda": "Preferiresti lavorare 4 giorni a settimana guadagnando il 20% in meno o 6 giorni guadagnando il 20% in più?", "opzioni": ["4 giorni, -20%", "6 giorni, +20%"]},
-  {"id": 187, "tipo": "multipla", "domanda": "Preferiresti avere il 10% di sconto su tutto per sempre o non pagare mai i trasporti?", "opzioni": ["10% di sconto su tutto", "Trasporti gratis"]},
-  {"id": 188, "tipo": "multipla", "domanda": "Preferiresti ricevere complimenti falsi ogni giorno o critiche oneste una volta alla settimana?", "opzioni": ["Complimenti falsi ogni giorno", "Critiche oneste settimanali"]},
-  {"id": 189, "tipo": "multipla", "domanda": "Preferiresti avere un'amicizia perfetta con un robot o una imperfetta con un umano?", "opzioni": ["Amicizia perfetta con un robot", "Imperfetta con un umano"]},
-  {"id": 190, "tipo": "multipla", "domanda": "Preferiresti che tutti sapessero sempre dove sei o non sapere mai dove si trovano gli altri?", "opzioni": ["Tutti sanno dove sei", "Non sai dove sono gli altri"]},
-  {"id": 191, "tipo": "multipla", "domanda": "Preferiresti avere una giornata in più alla settimana o dormire un'ora in meno ogni notte?", "opzioni": ["Giornata in più", "Dormire un'ora in meno"]},
-  {"id": 192, "tipo": "multipla", "domanda": "Preferiresti poter guarire qualsiasi malattia o fermare qualsiasi conflitto?", "opzioni": ["Guarire qualsiasi malattia", "Fermare qualsiasi conflitto"]},
-  {"id": 193, "tipo": "multipla", "domanda": "Preferiresti avere un superpotere ma non poterlo mai usare o non averne nessuno?", "opzioni": ["Superpotere inutilizzabile", "Nessun superpotere"]},
-  {"id": 194, "tipo": "multipla", "domanda": "Preferiresti avere un superpotere solo in acqua o solo in aria?", "opzioni": ["Solo in acqua", "Solo in aria"]},
-  {"id": 195, "tipo": "multipla", "domanda": "Preferiresti dimenticare tutte le brutte esperienze o ricordarle ma imparare da esse?", "opzioni": ["Dimenticarle", "Ricordarle e imparare"]},
-  {"id": 196, "tipo": "multipla", "domanda": "Preferiresti non dover mai pagare le tasse o non dover mai aspettare in fila?", "opzioni": ["Mai pagare le tasse", "Mai aspettare in fila"]},
-  {"id": 197, "tipo": "multipla", "domanda": "Preferiresti mangiare insetti o cibo per gatti per una settimana?", "opzioni": ["Insetti", "Cibo per gatti"]},
-  {"id": 198, "tipo": "multipla", "domanda": "Preferiresti poter teletrasportarti ovunque o avere un'auto che guida da sola?", "opzioni": ["Teletrasporto", "Auto autonoma"]},
-  {"id": 199, "tipo": "multipla", "domanda": "Preferiresti avere un assistente personale gratuito per un anno o una casa gratis?", "opzioni": ["Assistente personale", "Casa gratis"]},
-  {"id": 200, "tipo": "multipla", "domanda": "Preferiresti vincere una partita importante o fare un'ottima figura con qualcuno che ami?", "opzioni": ["Vincere la partita", "Fare bella figura"]},
-  {"id": 201, "tipo": "multipla", "domanda": "Preferiresti avere un dragon o un unicorno come animale domestico?", "opzioni": ["Dragon", "Unicorno"]},
-  {"id": 202, "tipo": "multipla", "domanda": "Preferiresti avere un animale mitologico come pet: fenice o grifone?", "opzioni": ["Fenice", "Grifone"]},
-  {"id": 203, "tipo": "multipla", "domanda": "Se potessi essere un animale per un giorno, quale sceglieresti?", "opzioni": ["Un uccello in volo", "Un delfino in mare", "Un leone nella savana", "Un orso in letargo"]},
-  {"id": 204, "tipo": "multipla", "domanda": "Qual è il miglior modo per trascorrere una domenica?", "opzioni": ["A casa a rilassarsi", "In giro con gli amici", "In natura", "A cucinare qualcosa di buono"]},
-  {"id": 205, "tipo": "multipla", "domanda": "Qual è la cosa più importante in un appartamento?", "opzioni": ["La cucina", "Il bagno", "Il letto", "La connessione wifi"]},
-  {"id": 206, "tipo": "multipla", "domanda": "Qual è il modo migliore per scusarsi?", "opzioni": ["Di persona", "Con un messaggio", "Con un regalo", "Con i fatti"]},
-  {"id": 207, "tipo": "multipla", "domanda": "Cosa faresti per primo con una macchina del tempo?", "opzioni": ["Andare nel futuro", "Tornare nel passato", "Correggere un errore", "Vedere un evento storico"]},
-  {"id": 208, "tipo": "multipla", "domanda": "Qual è la cosa più importante in un lavoro?", "opzioni": ["Lo stipendio", "I colleghi", "La flessibilità", "La passione per quello che fai"]},
-  {"id": 209, "tipo": "multipla", "domanda": "Se potessi vivere in un'altra epoca, quale sceglieresti?", "opzioni": ["Antica Roma", "Rinascimento italiano", "Anni '60", "Il futuro tra 100 anni"]},
-  {"id": 210, "tipo": "multipla", "domanda": "Qual è la cosa più spaventosa?", "opzioni": ["I ragni", "Il buio", "Le altezze", "Gli spazi stretti"]},
-  {"id": 211, "tipo": "multipla", "domanda": "Qual è il miglior tipo di vacanza?", "opzioni": ["Mare e spiaggia", "Montagna e trekking", "Città d'arte", "Avventura in luoghi esotici"]},
-  {"id": 212, "tipo": "multipla", "domanda": "Qual è il miglior modo per rilassarsi dopo una giornata stressante?", "opzioni": ["Una passeggiata", "Un bagno caldo", "Guardare una serie TV", "Mangiare qualcosa di buono"]},
-  {"id": 213, "tipo": "multipla", "domanda": "Se potessi scegliere solo un mezzo di trasporto per sempre, quale sarebbe?", "opzioni": ["Auto", "Treno", "Bicicletta", "Moto"]},
-  {"id": 214, "tipo": "multipla", "domanda": "Qual è la cosa più difficile da fare a digiuno?", "opzioni": ["Lavorare", "Fare sport", "Guidare", "Dormire"]},
-  {"id": 215, "tipo": "multipla", "domanda": "Qual è il miglior condimento per la pasta?", "opzioni": ["Pomodoro e basilico", "Carbonara", "Pesto", "Aglio e olio"]},
-  {"id": 216, "tipo": "multipla", "domanda": "Quale sarebbe il tuo ultimo pasto?", "opzioni": ["Pizza", "Pasta al ragù", "Una grigliata", "Sushi"]},
-  {"id": 217, "tipo": "multipla", "domanda": "Quale animale ti descrive meglio?", "opzioni": ["Leone", "Volpe", "Gufo", "Delfino"]},
-  {"id": 218, "tipo": "multipla", "domanda": "Cosa faresti con un milione di euro oltre a spenderlo per te?", "opzioni": ["Donarlo in beneficenza", "Investirlo", "Comprare casa per la famiglia", "Girare il mondo"]},
-  {"id": 219, "tipo": "multipla", "domanda": "Qual è la cosa più importante in un amico?", "opzioni": ["La lealtà", "Il senso dell'umorismo", "L'onestà", "Essere sempre disponibile"]},
-  {"id": 220, "tipo": "multipla", "domanda": "Se potessi vivere dentro un film, quale sceglieresti?", "opzioni": ["Un film d'avventura", "Una commedia romantica", "Un film di supereroi", "Un film fantasy"]},
-  {"id": 221, "tipo": "multipla", "domanda": "Qual è la cosa che non manca mai nel tuo frigo?", "opzioni": ["Formaggio", "Uova", "Acqua", "Avanzi di ieri"]},
-  {"id": 222, "tipo": "multipla", "domanda": "Qual è la cosa che fai appena entri in casa?", "opzioni": ["Togliermi le scarpe", "Controllare il telefono", "Aprire il frigo", "Buttarmi sul divano"]},
-  {"id": 223, "tipo": "multipla", "domanda": "Qual è il momento migliore della giornata?", "opzioni": ["La mattina presto", "La pausa pranzo", "Il tramonto", "La sera tardi"]},
-  {"id": 224, "tipo": "multipla", "domanda": "Cosa porteresti su un'isola deserta?", "opzioni": ["Un coltello", "Un accendino", "Un telefono satellitare", "Un libro"]},
-  {"id": 225, "tipo": "multipla", "domanda": "Qual è il miglior regalo di compleanno?", "opzioni": ["Soldi", "Un'esperienza (viaggio, cena...)", "Qualcosa di personalizzato", "Una sorpresa"]},
-  {"id": 226, "tipo": "multipla", "domanda": "Qual è il modo migliore per iniziare la giornata?", "opzioni": ["Caffè e silenzio", "Fare sport", "Una buona colazione abbondante", "Guardare il telefono a letto ancora un po'"]},
-  {"id": 227, "tipo": "multipla", "domanda": "Qual è la cosa che non sopporti in un collega?", "opzioni": ["Che faccia rumore mangiando", "Che non saluti", "Che risponda alle email con i punti esclamativi", "Che lasci i piatti sporchi in cucina"]},
-  {"id": 228, "tipo": "multipla", "domanda": "Qual è il miglior film da guardare in una serata in compagnia?", "opzioni": ["Una commedia", "Un thriller", "Un film d'azione", "Un horror"]},
-  {"id": 229, "tipo": "multipla", "domanda": "Cosa fai quando non riesci a dormire?", "opzioni": ["Guardo il telefono", "Leggo", "Mangio qualcosa", "Conto le pecore"]},
-  {"id": 230, "tipo": "multipla", "domanda": "Qual è il superpotere che vorresti ma non ammetteresti?", "opzioni": ["Leggere i messaggi altrui", "Teletrasportarmi davanti alla cassa senza fare la fila", "Sapere sempre cosa pensano gli altri di me", "Non invecchiare mai"]},
-  {"id": 231, "tipo": "multipla", "domanda": "Qual è la cosa che fai quando sei nervoso?", "opzioni": ["Mangio", "Pulisco casa", "Cammino avanti e indietro", "Scrivo messaggi e li cancello"]},
-  {"id": 232, "tipo": "multipla", "domanda": "Qual è la cosa di cui le persone si lamentano di più?", "opzioni": ["Il traffico", "Il tempo", "Il lavoro", "I prezzi"]},
-  {"id": 233, "tipo": "multipla", "domanda": "Cosa faresti se sapessi che il mondo finisce domani?", "opzioni": ["Starei con le persone che amo", "Mangerei tutto quello che voglio", "Farei qualcosa che ho sempre rimandato", "Non cambierei nulla"]},
-  {"id": 234, "tipo": "multipla", "domanda": "Qual è la cosa più difficile da abbandonare?", "opzioni": ["Il telefono", "Una cattiva abitudine", "Una persona", "Un posto"]},
-  {"id": 235, "tipo": "multipla", "domanda": "Qual è la cosa che compri sempre al supermercato e poi non usi?", "opzioni": ["Verdura", "Spezie esotiche", "Prodotti dietetici", "Ingredienti per ricette mai fatte"]},
-  {"id": 236, "tipo": "multipla", "domanda": "Se potessi avere una dote naturale, quale sceglieresti?", "opzioni": ["Saper cantare", "Saper disegnare", "Saper ballare", "Saper cucinare divinamente"]},
-  {"id": 237, "tipo": "multipla", "domanda": "Qual è la cosa più difficile da spiegare ai propri genitori?", "opzioni": ["Come funziona internet", "Le mie scelte di vita", "Perché non ho ancora un lavoro fisso", "Cosa faccio tutto il giorno sul telefono"]},
-  {"id": 238, "tipo": "multipla", "domanda": "Qual è la cosa che fai ogni domenica sera?", "opzioni": ["Mi deprimo pensando al lunedì", "Preparo la settimana", "Guardo una serie", "Vedo la famiglia"]},
-  {"id": 239, "tipo": "multipla", "domanda": "Quale sarebbe la tua reazione se incontrassi un extraterrestre?", "opzioni": ["Scapperei", "Cercherei di comunicare", "Farei una foto", "Svenirei"]},
-  {"id": 240, "tipo": "multipla", "domanda": "Qual è la cosa che compreresti se i soldi non fossero un problema?", "opzioni": ["Una casa grande", "Un viaggio intorno al mondo", "Un'auto di lusso", "Il tempo libero"]}
+  {
+    "id": 1,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la migliore bevanda calda?"
+  },
+  {
+    "id": 2,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'animale più grande che riusciresti a sollevare?"
+  },
+  {
+    "id": 3,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Se potessi mangiare solo una cosa per sempre, quale sarebbe?"
+  },
+  {
+    "id": 4,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è il peggior odore che esiste?"
+  },
+  {
+    "id": 5,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il cibo più sopravvalutato al mondo?"
+  },
+  {
+    "id": 6,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che quasi tutti fanno ma nessuno ammette?"
+  },
+  {
+    "id": 7,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il lavoro che sembra facile ma è difficilissimo?"
+  },
+  {
+    "id": 8,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Se gli animali potessero parlare, quale sarebbe il più noioso?"
+  },
+  {
+    "id": 9,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il rumore più fastidioso che esiste?"
+  },
+  {
+    "id": 10,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più inutile che si insegna a scuola?"
+  },
+  {
+    "id": 11,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il frutto più buono del mondo?"
+  },
+  {
+    "id": 12,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il dolce più buono che esiste?"
+  },
+  {
+    "id": 13,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la prima cosa che fai quando ti svegli?"
+  },
+  {
+    "id": 14,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da fare senza usare le mani?"
+  },
+  {
+    "id": 15,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più strana che le persone collezionano?"
+  },
+  {
+    "id": 16,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che quasi tutti fanno in bagno e non ammettono?"
+  },
+  {
+    "id": 17,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più ridicola di cui le persone si vantano?"
+  },
+  {
+    "id": 18,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'animale che pensi sia più intelligente di quanto crediamo?"
+  },
+  {
+    "id": 19,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che tutti fingono di capire ma non capiscono?"
+  },
+  {
+    "id": 20,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da tenere pulita in casa?"
+  },
+  {
+    "id": 21,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa che ti fa venire fame solo a sentirne l'odore?"
+  },
+  {
+    "id": 22,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa più assurda che si potrebbe mettere su una pizza?"
+  },
+  {
+    "id": 23,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è il verso di animale più ridicolo?"
+  },
+  {
+    "id": 24,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che quasi tutti fanno mentre guidano e non ammettono?"
+  },
+  {
+    "id": 25,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è l'oggetto che perdi più spesso?"
+  },
+  {
+    "id": 26,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più rilassante che esiste?"
+  },
+  {
+    "id": 27,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il fast food più popolare al mondo?"
+  },
+  {
+    "id": 28,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il tipo di pasta più amato dagli italiani?"
+  },
+  {
+    "id": 29,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la pizza con il condimento più popolare in Italia?"
+  },
+  {
+    "id": 30,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la miglior colazione possibile?"
+  },
+  {
+    "id": 31,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il miglior pranzo della domenica?"
+  },
+  {
+    "id": 32,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più bella che si possa ricevere in regalo?"
+  },
+  {
+    "id": 33,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il gelato che quasi tutti amano?"
+  },
+  {
+    "id": 34,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa più inutile che esiste in cucina?"
+  },
+  {
+    "id": 35,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il paese che produce il vino migliore?"
+  },
+  {
+    "id": 36,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa più strana che le persone mangiano?"
+  },
+  {
+    "id": 37,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa che non riusciresti mai a mangiare?"
+  },
+  {
+    "id": 38,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa più insolita che si mangia in qualche paese del mondo?"
+  },
+  {
+    "id": 39,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa di cui non puoi fare a meno quando sei in vacanza?"
+  },
+  {
+    "id": 40,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più difficile da spiegare a un extraterrestre?"
+  },
+  {
+    "id": 41,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più spaventosa che la scienza ha scoperto?"
+  },
+  {
+    "id": 42,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più difficile da spiegare senza usare esempi?"
+  },
+  {
+    "id": 43,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa che ti ha sorpreso di più scoprire da adulto?"
+  },
+  {
+    "id": 44,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più utile che hai imparato da internet?"
+  },
+  {
+    "id": 45,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa che le persone comprano troppo spesso senza bisogno?"
+  },
+  {
+    "id": 46,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa più inutile che hai comprato negli ultimi sei mesi?"
+  },
+  {
+    "id": 47,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa più assurda che si potrebbe vendere per un milione di euro?"
+  },
+  {
+    "id": 48,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è la cosa più bella da fare in una giornata di pioggia?"
+  },
+  {
+    "id": 49,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è la cosa più incredibile che la natura è in grado di fare?"
+  },
+  {
+    "id": 50,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è la cosa più bella che si possa vedere in natura?"
+  },
+  {
+    "id": 51,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è il fiore più bello?"
+  },
+  {
+    "id": 52,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è l'albero più bello che esiste?"
+  },
+  {
+    "id": 53,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è il pianeta più interessante del sistema solare oltre alla Terra?"
+  },
+  {
+    "id": 54,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è la cosa più difficile da trovare in natura?"
+  },
+  {
+    "id": 55,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che faresti prima se fossi sindaco della tua città?"
+  },
+  {
+    "id": 56,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che quasi tutti fanno quando sono da soli in ascensore?"
+  },
+  {
+    "id": 57,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più assurda che ti è stata chiesta in un colloquio di lavoro?"
+  },
+  {
+    "id": 58,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che non riesci mai a fare bene al primo tentativo?"
+  },
+  {
+    "id": 59,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che faresti se sapessi con certezza di non fallire?"
+  },
+  {
+    "id": 60,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più strana che hai fatto da solo in casa?"
+  },
+  {
+    "id": 61,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che ti fa ridere involontariamente?"
+  },
+  {
+    "id": 62,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa di cui ti vergogni di più di aver comprato?"
+  },
+  {
+    "id": 63,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da fare in silenzio?"
+  },
+  {
+    "id": 64,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa più stupida che hai fatto per risparmiare soldi?"
+  },
+  {
+    "id": 65,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più assurda che si potrebbe ordinare in un bar?"
+  },
+  {
+    "id": 66,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che hai sempre voluto imparare ma non hai mai iniziato?"
+  },
+  {
+    "id": 67,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che ti dà più ansia nella vita moderna?"
+  },
+  {
+    "id": 68,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che vorresti che i tuoi figli imparassero prima di tutto?"
+  },
+  {
+    "id": 69,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più difficile da fare con i guanti?"
+  },
+  {
+    "id": 70,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più inutile che il corpo umano fa?"
+  },
+  {
+    "id": 71,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è la cosa più buffa che fa un animale?"
+  },
+  {
+    "id": 72,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'animale che vorresti che non esistesse?"
+  },
+  {
+    "id": 73,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'insetto che ti spaventa di più?"
+  },
+  {
+    "id": 74,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'animale che ti spaventa di più in natura?"
+  },
+  {
+    "id": 75,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'uccello più bello del mondo?"
+  },
+  {
+    "id": 76,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Se potessi eliminare un insetto dal pianeta, quale sarebbe?"
+  },
+  {
+    "id": 77,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è l'animale che probabilmente vincerebbe le elezioni se potesse candidarsi?"
+  },
+  {
+    "id": 78,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Se potessi scegliere una mascotte animale per l'Italia, quale sarebbe?"
+  },
+  {
+    "id": 79,
+    "tipo": "aperta",
+    "categoria": "superpotere",
+    "domanda": "Qual è il superpotere più utile nella vita di tutti i giorni?"
+  },
+  {
+    "id": 80,
+    "tipo": "aperta",
+    "categoria": "superpotere",
+    "domanda": "Se potessi aggiungere un senso al corpo umano, quale sarebbe?"
+  },
+  {
+    "id": 81,
+    "tipo": "aperta",
+    "categoria": "superpotere",
+    "domanda": "Se potessi avere un dono artistico istantaneo, quale sarebbe?"
+  },
+  {
+    "id": 82,
+    "tipo": "aperta",
+    "categoria": "superpotere",
+    "domanda": "Se potessi imparare istantaneamente uno sport, quale sceglieresti?"
+  },
+  {
+    "id": 83,
+    "tipo": "aperta",
+    "categoria": "superpotere",
+    "domanda": "Se potessi essere esperto in qualsiasi materia istantaneamente, quale sceglieresti?"
+  },
+  {
+    "id": 84,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la prima cosa che compreresti se vincessi alla lotteria?"
+  },
+  {
+    "id": 85,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il lavoro che guadagna più di quanto meriti?"
+  },
+  {
+    "id": 86,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è il mestiere che vorresti fare se i soldi non fossero un problema?"
+  },
+  {
+    "id": 87,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa più divertente che si possa fare con 100 euro?"
+  },
+  {
+    "id": 88,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa che compreresti subito se costasse la metà?"
+  },
+  {
+    "id": 89,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa più strana che si vende su internet?"
+  },
+  {
+    "id": 90,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Se avessi un milione di euro da spendere in 24 ore, cosa compreresti per primo?"
+  },
+  {
+    "id": 91,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Se potessi avere un negozio gratuito per un giorno, quale sarebbe?"
+  },
+  {
+    "id": 92,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è il marchio di auto più desiderato?"
+  },
+  {
+    "id": 93,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa che compreresti solo per fare scena?"
+  },
+  {
+    "id": 94,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi spostare il tuo paese in un altro posto del mondo, dove lo metteresti?"
+  },
+  {
+    "id": 95,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi rinominare una città italiana, quale sceglieresti?"
+  },
+  {
+    "id": 96,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi eliminare una parola dalla lingua italiana, quale sarebbe?"
+  },
+  {
+    "id": 97,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi inventare un nuovo colore, come si chiamerebbe?"
+  },
+  {
+    "id": 98,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi creare una nuova festività nazionale, cosa si celebrerebbe?"
+  },
+  {
+    "id": 99,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se gli alberi potessero parlare, di cosa si lamenterebbero?"
+  },
+  {
+    "id": 100,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se il sole avesse un sapore, di cosa saprebbe?"
+  },
+  {
+    "id": 101,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se il mare fosse fatto di qualcosa che non sia acqua, di cosa sarebbe fatto?"
+  },
+  {
+    "id": 102,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se i colori avessero un sapore, di cosa saprebbe il rosso?"
+  },
+  {
+    "id": 103,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi far parlare un oggetto di casa tua, quale sceglieresti?"
+  },
+  {
+    "id": 104,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se gli animali avessero un'economia, quale sarebbe la valuta?"
+  },
+  {
+    "id": 105,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più spaventosa che potrebbe uscire da sotto il letto?"
+  },
+  {
+    "id": 106,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più romantica e inutile che si potrebbe fare?"
+  },
+  {
+    "id": 107,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Se potessi clonare te stesso, qual è la prima cosa che gli faresti fare?"
+  },
+  {
+    "id": 108,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Se potessi dare un nome a un nuovo pianeta, quale sarebbe?"
+  },
+  {
+    "id": 109,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che gli italiani fanno meglio di tutti nel mondo?"
+  },
+  {
+    "id": 110,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più incredibile che un essere umano abbia mai fatto?"
+  },
+  {
+    "id": 111,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più ridicola che le persone fanno per sembrare fighe?"
+  },
+  {
+    "id": 112,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa di cui le persone si pentono di più nella vita?"
+  },
+  {
+    "id": 113,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che faresti se sapessi che nessuno ti guarda?"
+  },
+  {
+    "id": 114,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più bizzarra che hai fatto da solo in casa?"
+  },
+  {
+    "id": 115,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che quasi tutti mentono su di sé?"
+  },
+  {
+    "id": 116,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che le persone fingono di amare ma in realtà odiano?"
+  },
+  {
+    "id": 117,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è il numero di calzini persi in casa tua ogni anno?"
+  },
+  {
+    "id": 118,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più difficile da fare con gli occhi chiusi?"
+  },
+  {
+    "id": 119,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è la cosa più assurda di cui due persone potrebbero litigare?"
+  },
+  {
+    "id": 120,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Se potessi scegliere il tuo soprannome, quale sarebbe?"
+  },
+  {
+    "id": 121,
+    "tipo": "aperta",
+    "categoria": "scelte",
+    "domanda": "Se potessi fare una sola domanda al Presidente della Repubblica, quale sarebbe?"
+  },
+  {
+    "id": 122,
+    "tipo": "aperta",
+    "categoria": "scelte",
+    "domanda": "Se potessi riscrivere la fine di qualsiasi film, quale sceglieresti?"
+  },
+  {
+    "id": 123,
+    "tipo": "aperta",
+    "categoria": "scelte",
+    "domanda": "Qual è il continente che vorresti esplorare?"
+  },
+  {
+    "id": 124,
+    "tipo": "aperta",
+    "categoria": "scelte",
+    "domanda": "Se potessi vivere in qualsiasi città del mondo, quale sceglieresti?"
+  },
+  {
+    "id": 125,
+    "tipo": "aperta",
+    "categoria": "scelte",
+    "domanda": "Se ti regalassero 10.000 euro da usare solo per viaggiare, dove andresti?"
+  },
+  {
+    "id": 126,
+    "tipo": "aperta",
+    "categoria": "cibo",
+    "domanda": "Qual è il cibo perfetto per una serata sul divano?"
+  },
+  {
+    "id": 127,
+    "tipo": "aperta",
+    "categoria": "animali",
+    "domanda": "Qual è la cosa che gli esseri umani fanno di più strano rispetto agli altri animali?"
+  },
+  {
+    "id": 128,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più imbarazzante che ti possa capitare in pubblico?"
+  },
+  {
+    "id": 129,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa peggiore che ti possa capitare in vacanza?"
+  },
+  {
+    "id": 130,
+    "tipo": "aperta",
+    "categoria": "assurdo",
+    "domanda": "Qual è il numero di cose che hai in questo momento nel frigorifero?"
+  },
+  {
+    "id": 131,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che quasi tutti fanno ma non ammettono mai?"
+  },
+  {
+    "id": 132,
+    "tipo": "aperta",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa che non riusciresti a fare per nessuna somma di denaro?"
+  },
+  {
+    "id": 133,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da trovare in un supermercato?"
+  },
+  {
+    "id": 134,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il sport che richiede più resistenza mentale?"
+  },
+  {
+    "id": 135,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che ti fa venire voglia di dormire?"
+  },
+  {
+    "id": 136,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più bella che si possa fare il giorno del proprio compleanno?"
+  },
+  {
+    "id": 137,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che avresti voluto sapere a 15 anni?"
+  },
+  {
+    "id": 138,
+    "tipo": "aperta",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più utile che si possa insegnare a un bambino?"
+  },
+  {
+    "id": 139,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è la cosa più divertente da fare sotto la pioggia?"
+  },
+  {
+    "id": 140,
+    "tipo": "aperta",
+    "categoria": "natura",
+    "domanda": "Qual è la cosa più costosa che si potrebbe fare gratis in natura?"
+  },
+  {
+    "id": 141,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere sempre troppo freddo o sempre troppo caldo?",
+    "opzioni": [
+      "Sempre troppo freddo",
+      "Sempre troppo caldo"
+    ]
+  },
+  {
+    "id": 142,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere le braccia o le gambe bioniche?",
+    "opzioni": [
+      "Braccia bioniche",
+      "Gambe bioniche"
+    ]
+  },
+  {
+    "id": 143,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti essere invisibile o poter volare?",
+    "opzioni": [
+      "Invisibile",
+      "Volare"
+    ]
+  },
+  {
+    "id": 144,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti vivere in montagna o al mare?",
+    "opzioni": [
+      "In montagna",
+      "Al mare"
+    ]
+  },
+  {
+    "id": 145,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non dormire mai o mangiare solo una volta al giorno?",
+    "opzioni": [
+      "Non dormire mai",
+      "Mangiare una volta al giorno"
+    ]
+  },
+  {
+    "id": 146,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti dimenticare tutto o ricordare tutto?",
+    "opzioni": [
+      "Dimenticare tutto",
+      "Ricordare tutto"
+    ]
+  },
+  {
+    "id": 147,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere la memoria di un elefante o la velocità di un ghepardo?",
+    "opzioni": [
+      "Memoria di un elefante",
+      "Velocità di un ghepardo"
+    ]
+  },
+  {
+    "id": 148,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti poter leggere nel pensiero o vedere il futuro?",
+    "opzioni": [
+      "Leggere nel pensiero",
+      "Vedere il futuro"
+    ]
+  },
+  {
+    "id": 149,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti poter respirare sott'acqua o non sentire mai il freddo?",
+    "opzioni": [
+      "Respirare sott'acqua",
+      "Non sentire mai il freddo"
+    ]
+  },
+  {
+    "id": 150,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere un olfatto da cane o una vista da aquila?",
+    "opzioni": [
+      "Olfatto da cane",
+      "Vista da aquila"
+    ]
+  },
+  {
+    "id": 151,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti poter parlare con gli animali o con le piante?",
+    "opzioni": [
+      "Con gli animali",
+      "Con le piante"
+    ]
+  },
+  {
+    "id": 152,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere la forza di un gorilla o la velocità di un falco?",
+    "opzioni": [
+      "Forza di un gorilla",
+      "Velocità di un falco"
+    ]
+  },
+  {
+    "id": 153,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti poter camminare sulle nuvole o sull'acqua?",
+    "opzioni": [
+      "Sulle nuvole",
+      "Sull'acqua"
+    ]
+  },
+  {
+    "id": 154,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere una memoria fotografica o dormire solo 2 ore sentendoti riposato?",
+    "opzioni": [
+      "Memoria fotografica",
+      "Dormire 2 ore"
+    ]
+  },
+  {
+    "id": 155,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti fermare il tempo o tornare indietro nel tempo?",
+    "opzioni": [
+      "Fermare il tempo",
+      "Tornare indietro"
+    ]
+  },
+  {
+    "id": 156,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non avere internet o non avere riscaldamento?",
+    "opzioni": [
+      "Niente internet",
+      "Niente riscaldamento"
+    ]
+  },
+  {
+    "id": 157,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti vivere senza specchi o senza calendari?",
+    "opzioni": [
+      "Senza specchi",
+      "Senza calendari"
+    ]
+  },
+  {
+    "id": 158,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non sentire mai più la tua canzone preferita o ascoltarla solo quella per sempre?",
+    "opzioni": [
+      "Non sentirla mai più",
+      "Solo quella per sempre"
+    ]
+  },
+  {
+    "id": 159,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti sapere quando morirai o come morirai?",
+    "opzioni": [
+      "Quando",
+      "Come"
+    ]
+  },
+  {
+    "id": 160,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti vivere 200 anni con salute mediocre o 80 anni in perfetta salute?",
+    "opzioni": [
+      "200 anni con salute mediocre",
+      "80 anni in perfetta salute"
+    ]
+  },
+  {
+    "id": 161,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti ricevere sempre buone notizie false o sempre brutte notizie vere?",
+    "opzioni": [
+      "Buone notizie false",
+      "Brutte notizie vere"
+    ]
+  },
+  {
+    "id": 162,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti essere sempre il primo o sempre l'ultimo ad arrivare?",
+    "opzioni": [
+      "Sempre il primo",
+      "Sempre l'ultimo"
+    ]
+  },
+  {
+    "id": 163,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti mangiare solo cibi dolci o solo cibi salati per sempre?",
+    "opzioni": [
+      "Solo dolci",
+      "Solo salati"
+    ]
+  },
+  {
+    "id": 164,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non avere mai più il raffreddore o non avere mai più le allergie?",
+    "opzioni": [
+      "Mai più raffreddore",
+      "Mai più allergie"
+    ]
+  },
+  {
+    "id": 165,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non dover mai cucinare o non dover mai fare la spesa?",
+    "opzioni": [
+      "Mai cucinare",
+      "Mai fare la spesa"
+    ]
+  },
+  {
+    "id": 166,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere un cuoco personale o un personal trainer?",
+    "opzioni": [
+      "Cuoco personale",
+      "Personal trainer"
+    ]
+  },
+  {
+    "id": 167,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non avere mai più il mal di testa o non avere mai più il mal di stomaco?",
+    "opzioni": [
+      "Mai più mal di testa",
+      "Mai più mal di stomaco"
+    ]
+  },
+  {
+    "id": 168,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere sempre l'ombrello quando piove o non bagnarti mai sotto la pioggia?",
+    "opzioni": [
+      "Avere sempre l'ombrello",
+      "Non bagnarsi mai"
+    ]
+  },
+  {
+    "id": 169,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere un nascondiglio segreto in casa o un passaggio segreto?",
+    "opzioni": [
+      "Nascondiglio segreto",
+      "Passaggio segreto"
+    ]
+  },
+  {
+    "id": 170,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere una casa sulla riva del mare o in cima a una montagna?",
+    "opzioni": [
+      "Riva del mare",
+      "Cima di una montagna"
+    ]
+  },
+  {
+    "id": 171,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti vivere in una casa sull'albero o in una casa sottomarino?",
+    "opzioni": [
+      "Casa sull'albero",
+      "Casa sottomarino"
+    ]
+  },
+  {
+    "id": 172,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere una casa ordinata ma brutta o caotica ma bella?",
+    "opzioni": [
+      "Ordinata ma brutta",
+      "Caotica ma bella"
+    ]
+  },
+  {
+    "id": 173,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti dormire su una nuvola o sotto le stelle nel deserto?",
+    "opzioni": [
+      "Su una nuvola",
+      "Nel deserto sotto le stelle"
+    ]
+  },
+  {
+    "id": 174,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti scoprire vita su Marte o una città sommersa sotto il Pacifico?",
+    "opzioni": [
+      "Vita su Marte",
+      "Città sommersa"
+    ]
+  },
+  {
+    "id": 175,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti passare una notte nella giungla o in fondo al mare?",
+    "opzioni": [
+      "Nella giungla",
+      "In fondo al mare"
+    ]
+  },
+  {
+    "id": 176,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non avere mai più fame o non avere mai più sonno?",
+    "opzioni": [
+      "Mai più fame",
+      "Mai più sonno"
+    ]
+  },
+  {
+    "id": 177,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non sentire mai più dolore o non sentire mai più stanchezza?",
+    "opzioni": [
+      "Mai più dolore",
+      "Mai più stanchezza"
+    ]
+  },
+  {
+    "id": 178,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti non avere mai più odore o non avere mai più gusto?",
+    "opzioni": [
+      "Niente odore",
+      "Niente gusto"
+    ]
+  },
+  {
+    "id": 179,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti essere troppo alto o troppo basso?",
+    "opzioni": [
+      "Troppo alto",
+      "Troppo basso"
+    ]
+  },
+  {
+    "id": 180,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere capelli sempre perfetti o denti sempre perfetti?",
+    "opzioni": [
+      "Capelli perfetti",
+      "Denti perfetti"
+    ]
+  },
+  {
+    "id": 181,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere un naso grande o orecchie grandi?",
+    "opzioni": [
+      "Naso grande",
+      "Orecchie grandi"
+    ]
+  },
+  {
+    "id": 182,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere mani al posto dei piedi o piedi al posto delle mani?",
+    "opzioni": [
+      "Mani al posto dei piedi",
+      "Piedi al posto delle mani"
+    ]
+  },
+  {
+    "id": 183,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere un cervello da scienziato o un corpo da atleta?",
+    "opzioni": [
+      "Cervello da scienziato",
+      "Corpo da atleta"
+    ]
+  },
+  {
+    "id": 184,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti essere sempre il più bravo o essere sempre il più simpatico?",
+    "opzioni": [
+      "Sempre il più bravo",
+      "Sempre il più simpatico"
+    ]
+  },
+  {
+    "id": 185,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere sempre ragione ma non essere mai creduto o avere sempre torto ma essere sempre creduto?",
+    "opzioni": [
+      "Sempre ragione, mai creduto",
+      "Sempre torto, sempre creduto"
+    ]
+  },
+  {
+    "id": 186,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Preferiresti lavorare 4 giorni a settimana guadagnando il 20% in meno o 6 giorni guadagnando il 20% in più?",
+    "opzioni": [
+      "4 giorni, -20%",
+      "6 giorni, +20%"
+    ]
+  },
+  {
+    "id": 187,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Preferiresti avere il 10% di sconto su tutto per sempre o non pagare mai i trasporti?",
+    "opzioni": [
+      "10% di sconto su tutto",
+      "Trasporti gratis"
+    ]
+  },
+  {
+    "id": 188,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti ricevere complimenti falsi ogni giorno o critiche oneste una volta alla settimana?",
+    "opzioni": [
+      "Complimenti falsi ogni giorno",
+      "Critiche oneste settimanali"
+    ]
+  },
+  {
+    "id": 189,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere un'amicizia perfetta con un robot o una imperfetta con un umano?",
+    "opzioni": [
+      "Amicizia perfetta con un robot",
+      "Imperfetta con un umano"
+    ]
+  },
+  {
+    "id": 190,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti che tutti sapessero sempre dove sei o non sapere mai dove si trovano gli altri?",
+    "opzioni": [
+      "Tutti sanno dove sei",
+      "Non sai dove sono gli altri"
+    ]
+  },
+  {
+    "id": 191,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti avere una giornata in più alla settimana o dormire un'ora in meno ogni notte?",
+    "opzioni": [
+      "Giornata in più",
+      "Dormire un'ora in meno"
+    ]
+  },
+  {
+    "id": 192,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti poter guarire qualsiasi malattia o fermare qualsiasi conflitto?",
+    "opzioni": [
+      "Guarire qualsiasi malattia",
+      "Fermare qualsiasi conflitto"
+    ]
+  },
+  {
+    "id": 193,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere un superpotere ma non poterlo mai usare o non averne nessuno?",
+    "opzioni": [
+      "Superpotere inutilizzabile",
+      "Nessun superpotere"
+    ]
+  },
+  {
+    "id": 194,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Preferiresti avere un superpotere solo in acqua o solo in aria?",
+    "opzioni": [
+      "Solo in acqua",
+      "Solo in aria"
+    ]
+  },
+  {
+    "id": 195,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti dimenticare tutte le brutte esperienze o ricordarle ma imparare da esse?",
+    "opzioni": [
+      "Dimenticarle",
+      "Ricordarle e imparare"
+    ]
+  },
+  {
+    "id": 196,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Preferiresti non dover mai pagare le tasse o non dover mai aspettare in fila?",
+    "opzioni": [
+      "Mai pagare le tasse",
+      "Mai aspettare in fila"
+    ]
+  },
+  {
+    "id": 197,
+    "tipo": "multipla",
+    "categoria": "cibo",
+    "domanda": "Preferiresti mangiare insetti o cibo per gatti per una settimana?",
+    "opzioni": [
+      "Insetti",
+      "Cibo per gatti"
+    ]
+  },
+  {
+    "id": 198,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti poter teletrasportarti ovunque o avere un'auto che guida da sola?",
+    "opzioni": [
+      "Teletrasporto",
+      "Auto autonoma"
+    ]
+  },
+  {
+    "id": 199,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Preferiresti avere un assistente personale gratuito per un anno o una casa gratis?",
+    "opzioni": [
+      "Assistente personale",
+      "Casa gratis"
+    ]
+  },
+  {
+    "id": 200,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Preferiresti vincere una partita importante o fare un'ottima figura con qualcuno che ami?",
+    "opzioni": [
+      "Vincere la partita",
+      "Fare bella figura"
+    ]
+  },
+  {
+    "id": 201,
+    "tipo": "multipla",
+    "categoria": "assurdo",
+    "domanda": "Preferiresti avere un dragon o un unicorno come animale domestico?",
+    "opzioni": [
+      "Dragon",
+      "Unicorno"
+    ]
+  },
+  {
+    "id": 202,
+    "tipo": "multipla",
+    "categoria": "assurdo",
+    "domanda": "Preferiresti avere un animale mitologico come pet: fenice o grifone?",
+    "opzioni": [
+      "Fenice",
+      "Grifone"
+    ]
+  },
+  {
+    "id": 203,
+    "tipo": "multipla",
+    "categoria": "animali",
+    "domanda": "Se potessi essere un animale per un giorno, quale sceglieresti?",
+    "opzioni": [
+      "Un uccello in volo",
+      "Un delfino in mare",
+      "Un leone nella savana",
+      "Un orso in letargo"
+    ]
+  },
+  {
+    "id": 204,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il miglior modo per trascorrere una domenica?",
+    "opzioni": [
+      "A casa a rilassarsi",
+      "In giro con gli amici",
+      "In natura",
+      "A cucinare qualcosa di buono"
+    ]
+  },
+  {
+    "id": 205,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più importante in un appartamento?",
+    "opzioni": [
+      "La cucina",
+      "Il bagno",
+      "Il letto",
+      "La connessione wifi"
+    ]
+  },
+  {
+    "id": 206,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il modo migliore per scusarsi?",
+    "opzioni": [
+      "Di persona",
+      "Con un messaggio",
+      "Con un regalo",
+      "Con i fatti"
+    ]
+  },
+  {
+    "id": 207,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Cosa faresti per primo con una macchina del tempo?",
+    "opzioni": [
+      "Andare nel futuro",
+      "Tornare nel passato",
+      "Correggere un errore",
+      "Vedere un evento storico"
+    ]
+  },
+  {
+    "id": 208,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più importante in un lavoro?",
+    "opzioni": [
+      "Lo stipendio",
+      "I colleghi",
+      "La flessibilità",
+      "La passione per quello che fai"
+    ]
+  },
+  {
+    "id": 209,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Se potessi vivere in un'altra epoca, quale sceglieresti?",
+    "opzioni": [
+      "Antica Roma",
+      "Rinascimento italiano",
+      "Anni '60",
+      "Il futuro tra 100 anni"
+    ]
+  },
+  {
+    "id": 210,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più spaventosa?",
+    "opzioni": [
+      "I ragni",
+      "Il buio",
+      "Le altezze",
+      "Gli spazi stretti"
+    ]
+  },
+  {
+    "id": 211,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il miglior tipo di vacanza?",
+    "opzioni": [
+      "Mare e spiaggia",
+      "Montagna e trekking",
+      "Città d'arte",
+      "Avventura in luoghi esotici"
+    ]
+  },
+  {
+    "id": 212,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il miglior modo per rilassarsi dopo una giornata stressante?",
+    "opzioni": [
+      "Una passeggiata",
+      "Un bagno caldo",
+      "Guardare una serie TV",
+      "Mangiare qualcosa di buono"
+    ]
+  },
+  {
+    "id": 213,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Se potessi scegliere solo un mezzo di trasporto per sempre, quale sarebbe?",
+    "opzioni": [
+      "Auto",
+      "Treno",
+      "Bicicletta",
+      "Moto"
+    ]
+  },
+  {
+    "id": 214,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da fare a digiuno?",
+    "opzioni": [
+      "Lavorare",
+      "Fare sport",
+      "Guidare",
+      "Dormire"
+    ]
+  },
+  {
+    "id": 215,
+    "tipo": "multipla",
+    "categoria": "cibo",
+    "domanda": "Qual è il miglior condimento per la pasta?",
+    "opzioni": [
+      "Pomodoro e basilico",
+      "Carbonara",
+      "Pesto",
+      "Aglio e olio"
+    ]
+  },
+  {
+    "id": 216,
+    "tipo": "multipla",
+    "categoria": "cibo",
+    "domanda": "Quale sarebbe il tuo ultimo pasto?",
+    "opzioni": [
+      "Pizza",
+      "Pasta al ragù",
+      "Una grigliata",
+      "Sushi"
+    ]
+  },
+  {
+    "id": 217,
+    "tipo": "multipla",
+    "categoria": "animali",
+    "domanda": "Quale animale ti descrive meglio?",
+    "opzioni": [
+      "Leone",
+      "Volpe",
+      "Gufo",
+      "Delfino"
+    ]
+  },
+  {
+    "id": 218,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Cosa faresti con un milione di euro oltre a spenderlo per te?",
+    "opzioni": [
+      "Donarlo in beneficenza",
+      "Investirlo",
+      "Comprare casa per la famiglia",
+      "Girare il mondo"
+    ]
+  },
+  {
+    "id": 219,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più importante in un amico?",
+    "opzioni": [
+      "La lealtà",
+      "Il senso dell'umorismo",
+      "L'onestà",
+      "Essere sempre disponibile"
+    ]
+  },
+  {
+    "id": 220,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Se potessi vivere dentro un film, quale sceglieresti?",
+    "opzioni": [
+      "Un film d'avventura",
+      "Una commedia romantica",
+      "Un film di supereroi",
+      "Un film fantasy"
+    ]
+  },
+  {
+    "id": 221,
+    "tipo": "multipla",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa che non manca mai nel tuo frigo?",
+    "opzioni": [
+      "Formaggio",
+      "Uova",
+      "Acqua",
+      "Avanzi di ieri"
+    ]
+  },
+  {
+    "id": 222,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che fai appena entri in casa?",
+    "opzioni": [
+      "Togliermi le scarpe",
+      "Controllare il telefono",
+      "Aprire il frigo",
+      "Buttarmi sul divano"
+    ]
+  },
+  {
+    "id": 223,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il momento migliore della giornata?",
+    "opzioni": [
+      "La mattina presto",
+      "La pausa pranzo",
+      "Il tramonto",
+      "La sera tardi"
+    ]
+  },
+  {
+    "id": 224,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Cosa porteresti su un'isola deserta?",
+    "opzioni": [
+      "Un coltello",
+      "Un accendino",
+      "Un telefono satellitare",
+      "Un libro"
+    ]
+  },
+  {
+    "id": 225,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Qual è il miglior regalo di compleanno?",
+    "opzioni": [
+      "Soldi",
+      "Un'esperienza (viaggio, cena...)",
+      "Qualcosa di personalizzato",
+      "Una sorpresa"
+    ]
+  },
+  {
+    "id": 226,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il modo migliore per iniziare la giornata?",
+    "opzioni": [
+      "Caffè e silenzio",
+      "Fare sport",
+      "Una buona colazione abbondante",
+      "Guardare il telefono a letto ancora un po'"
+    ]
+  },
+  {
+    "id": 227,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che non sopporti in un collega?",
+    "opzioni": [
+      "Che faccia rumore mangiando",
+      "Che non saluti",
+      "Che risponda alle email con i punti esclamativi",
+      "Che lasci i piatti sporchi in cucina"
+    ]
+  },
+  {
+    "id": 228,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è il miglior film da guardare in una serata in compagnia?",
+    "opzioni": [
+      "Una commedia",
+      "Un thriller",
+      "Un film d'azione",
+      "Un horror"
+    ]
+  },
+  {
+    "id": 229,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Cosa fai quando non riesci a dormire?",
+    "opzioni": [
+      "Guardo il telefono",
+      "Leggo",
+      "Mangio qualcosa",
+      "Conto le pecore"
+    ]
+  },
+  {
+    "id": 230,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Qual è il superpotere che vorresti ma non ammetteresti?",
+    "opzioni": [
+      "Leggere i messaggi altrui",
+      "Teletrasportarmi davanti alla cassa senza fare la fila",
+      "Sapere sempre cosa pensano gli altri di me",
+      "Non invecchiare mai"
+    ]
+  },
+  {
+    "id": 231,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che fai quando sei nervoso?",
+    "opzioni": [
+      "Mangio",
+      "Pulisco casa",
+      "Cammino avanti e indietro",
+      "Scrivo messaggi e li cancello"
+    ]
+  },
+  {
+    "id": 232,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa di cui le persone si lamentano di più?",
+    "opzioni": [
+      "Il traffico",
+      "Il tempo",
+      "Il lavoro",
+      "I prezzi"
+    ]
+  },
+  {
+    "id": 233,
+    "tipo": "multipla",
+    "categoria": "scelte",
+    "domanda": "Cosa faresti se sapessi che il mondo finisce domani?",
+    "opzioni": [
+      "Starei con le persone che amo",
+      "Mangerei tutto quello che voglio",
+      "Farei qualcosa che ho sempre rimandato",
+      "Non cambierei nulla"
+    ]
+  },
+  {
+    "id": 234,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da abbandonare?",
+    "opzioni": [
+      "Il telefono",
+      "Una cattiva abitudine",
+      "Una persona",
+      "Un posto"
+    ]
+  },
+  {
+    "id": 235,
+    "tipo": "multipla",
+    "categoria": "cibo",
+    "domanda": "Qual è la cosa che compri sempre al supermercato e poi non usi?",
+    "opzioni": [
+      "Verdura",
+      "Spezie esotiche",
+      "Prodotti dietetici",
+      "Ingredienti per ricette mai fatte"
+    ]
+  },
+  {
+    "id": 236,
+    "tipo": "multipla",
+    "categoria": "superpotere",
+    "domanda": "Se potessi avere una dote naturale, quale sceglieresti?",
+    "opzioni": [
+      "Saper cantare",
+      "Saper disegnare",
+      "Saper ballare",
+      "Saper cucinare divinamente"
+    ]
+  },
+  {
+    "id": 237,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa più difficile da spiegare ai propri genitori?",
+    "opzioni": [
+      "Come funziona internet",
+      "Le mie scelte di vita",
+      "Perché non ho ancora un lavoro fisso",
+      "Cosa faccio tutto il giorno sul telefono"
+    ]
+  },
+  {
+    "id": 238,
+    "tipo": "multipla",
+    "categoria": "quotidiano",
+    "domanda": "Qual è la cosa che fai ogni domenica sera?",
+    "opzioni": [
+      "Mi deprimo pensando al lunedì",
+      "Preparo la settimana",
+      "Guardo una serie",
+      "Vedo la famiglia"
+    ]
+  },
+  {
+    "id": 239,
+    "tipo": "multipla",
+    "categoria": "assurdo",
+    "domanda": "Quale sarebbe la tua reazione se incontrassi un extraterrestre?",
+    "opzioni": [
+      "Scapperei",
+      "Cercherei di comunicare",
+      "Farei una foto",
+      "Svenirei"
+    ]
+  },
+  {
+    "id": 240,
+    "tipo": "multipla",
+    "categoria": "soldi",
+    "domanda": "Qual è la cosa che compreresti se i soldi non fossero un problema?",
+    "opzioni": [
+      "Una casa grande",
+      "Un viaggio intorno al mondo",
+      "Un'auto di lusso",
+      "Il tempo libero"
+    ]
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la parte del corpo che trovi più attraente in una persona?",
+    "id": 241
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il posto più strano in cui hai mai baciato qualcuno?",
+    "id": 242
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che fai di nascosto e che non ammetteresti mai in pubblico?",
+    "id": 243
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il complimento che ti fa più effetto ricevere?",
+    "id": 244
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa più imbarazzante che ti sia mai capitata con una persona che ti piaceva?",
+    "id": 245
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il tuo difetto fisico preferito nelle altre persone?",
+    "id": 246
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che noti per prima in una persona che trovi attraente?",
+    "id": 247
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il tuo fantasy innocente ma che non racconteresti ai tuoi genitori?",
+    "id": 248
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa più audace che hai fatto per conquistare qualcuno?",
+    "id": 249
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il peggior bacio che hai mai dato o ricevuto?",
+    "id": 250
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il film o la serie che trovi più sensuale?",
+    "id": 251
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che ti mette più a disagio su un primo appuntamento?",
+    "id": 252
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il luogo più romantico in cui hai passato una notte?",
+    "id": 253
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che non perdoneresti mai a un partner?",
+    "id": 254
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il messaggio più imbarazzante che hai mandato alla persona sbagliata?",
+    "id": 255
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che fai quando sei solo/a e che non faresti mai davanti ad altri?",
+    "id": 256
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il tuo guilty pleasure che avresti difficoltà ad ammettere?",
+    "id": 257
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che trovi irresistibile in una persona, anche se non dovresti?",
+    "id": 258
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è il modo più strano in cui ti è stato dichiarato qualcuno?",
+    "id": 259
+  },
+  {
+    "tipo": "aperta",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che ti eccita intellettualmente in una persona?",
+    "id": 260
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa noti per prima in una persona che ti attrae?",
+    "opzioni": [
+      "Gli occhi",
+      "Il sorriso",
+      "Il corpo",
+      "Il modo di fare"
+    ],
+    "id": 261
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa più importante in un partner?",
+    "opzioni": [
+      "L'intelligenza",
+      "L'ironia",
+      "L'aspetto fisico",
+      "La stabilità emotiva"
+    ],
+    "id": 262
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Dove preferiresti fare un primo appuntamento?",
+    "opzioni": [
+      "Una cena romantica",
+      "Un aperitivo informale",
+      "Una passeggiata",
+      "Un'attività insieme (cinema, mostra...)"
+    ],
+    "id": 263
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa rovinerebbe subito un appuntamento?",
+    "opzioni": [
+      "Arrivare in ritardo senza avvisare",
+      "Parlare solo di sé",
+      "Guardare il telefono continuamente",
+      "Essere maleducati col cameriere"
+    ],
+    "id": 264
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Preferiresti essere lasciato/a o lasciare?",
+    "opzioni": [
+      "Essere lasciato/a",
+      "Lasciare"
+    ],
+    "id": 265
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa ti fa innamorare di più?",
+    "opzioni": [
+      "Una risata condivisa",
+      "Un gesto inaspettato",
+      "Una conversazione profonda",
+      "La complicità silenziosa"
+    ],
+    "id": 266
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Qual è il segnale che qualcuno ti piace davvero?",
+    "opzioni": [
+      "Ci penso continuamente",
+      "Divento goffo/a",
+      "Controllo il telefono ogni cinque minuti",
+      "Mi faccio più bello/a quando so che lo/la vedo"
+    ],
+    "id": 267
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa ti dà più fastidio in una relazione?",
+    "opzioni": [
+      "La gelosia eccessiva",
+      "La scarsa comunicazione",
+      "Le aspettative non dette",
+      "La dipendenza emotiva"
+    ],
+    "id": 268
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Preferiresti stare con qualcuno troppo geloso o qualcuno completamente indifferente?",
+    "opzioni": [
+      "Troppo geloso/a",
+      "Completamente indifferente"
+    ],
+    "id": 269
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa consideri più romantico?",
+    "opzioni": [
+      "Una lettera scritta a mano",
+      "Una sorpresa improvvisata",
+      "Una cena cucinata a casa",
+      "Un viaggio inaspettato"
+    ],
+    "id": 270
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa più coraggiosa che hai fatto per amore?",
+    "opzioni": [
+      "Dichiararmi per primo/a",
+      "Lasciare una relazione che non funzionava",
+      "Seguire qualcuno in un'altra città",
+      "Mandare un messaggio alle 3 di notte"
+    ],
+    "id": 271
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Come preferisci che una persona ti mostri affetto?",
+    "opzioni": [
+      "Con le parole",
+      "Con i gesti fisici",
+      "Con i regali",
+      "Con la qualità del tempo insieme"
+    ],
+    "id": 272
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa ti spaventa di più in una relazione seria?",
+    "opzioni": [
+      "Perdere la mia libertà",
+      "Essere abbandonato/a",
+      "Non essere abbastanza",
+      "Annoiarsi"
+    ],
+    "id": 273
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Qual è la cosa che non perdoneresti mai a un partner?",
+    "opzioni": [
+      "Il tradimento",
+      "Le bugie continue",
+      "Il disprezzo",
+      "L'indifferenza"
+    ],
+    "id": 274
+  },
+  {
+    "tipo": "multipla",
+    "categoria": "hot",
+    "domanda": "Cosa faresti se scoprissi che il tuo partner ti ha mentito su qualcosa di importante?",
+    "opzioni": [
+      "Ne parlerei subito",
+      "Aspetterei il momento giusto",
+      "Farei finta di niente per un po'",
+      "Lascerei immediatamente"
+    ],
+    "id": 275
+  }
 ]

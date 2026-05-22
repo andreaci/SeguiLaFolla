@@ -3,13 +3,15 @@ import { computed, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useGameStore } from '../stores/game'
 import { api } from '../api/client'
-import PhaseBadge from '../components/ui/PhaseBadge.vue'
 import BaseButton from '../components/ui/BaseButton.vue'
 import BaseAlert from '../components/ui/BaseAlert.vue'
 import PlayerList from '../components/game/PlayerList.vue'
 import QuestionDisplay from '../components/game/QuestionDisplay.vue'
 import RoundResult from '../components/game/RoundResult.vue'
+import DirectorRoundTracker from '../components/game/DirectorRoundTracker.vue'
 import QrCodePanel from '../components/game/QrCodePanel.vue'
+import NumberedList from '../components/ui/NumberedList.vue'
+import type { NumberedListItem } from '../components/ui/NumberedList.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -38,53 +40,51 @@ async function forceEndTurn() {
 
 const canForceEndTurn = computed(() => game.value?.phase === 'answering')
 
+const resultAnswerItems = computed((): NumberedListItem[] => {
+  const g = game.value
+  if (!g || g.phase !== 'results') return []
+  return g.answers
+    .filter((a) => a.id)
+    .map((a) => {
+      const votes = `${a.voteCount} ${a.voteCount === 1 ? 'voto' : 'voti'}`
+      const secondary = a.authorName ? `${votes} · ${a.authorName}` : votes
+      return { id: a.id, primary: a.text, secondary }
+    })
+})
+
 async function toLobby() {
   await gameStore.run(() => api.toLobby(gameId))
 }
 </script>
 
 <template>
-  <section v-if="game">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem">
-      <div>
-        <h1>{{ game.name }}</h1>
-        <PhaseBadge :phase="game.phase" />
-      </div>
-      <QrCodePanel :url="joinUrl" label="QR per i giocatori" />
-    </div>
+  <section v-if="game" class="director">
+    <header class="director__header">
+      <h1 class="director__title">{{ game.name }}</h1>
+    </header>
 
     <BaseAlert v-if="gameStore.error">{{ gameStore.error }}</BaseAlert>
 
-    <div class="grid-2" style="margin-top: 1.5rem">
-      <div class="card">
-        <h2>Giocatori</h2>
-        <PlayerList :players="game.players" show-status />
-      </div>
-
-      <div class="card">
-        <h2>Turno</h2>
+    <div class="director__grid">
+      <div class="director__main card">
+        <h2 class="director__section-title">Domanda attuale</h2>
         <QuestionDisplay
           v-if="game.currentQuestion"
           :key="`${game.phase}-${game.currentQuestion.id}`"
           :question="game.currentQuestion"
+          show-choices
         />
+        <p v-else class="text-muted">Nessuna domanda in corso.</p>
 
-        <ul v-if="game.phase === 'answering'" class="player-list">
-          <li v-for="a in game.answers" :key="a.text + (a.authorName ?? '')">
-            <span>{{ a.authorName ?? '?' }}</span>
-            <span class="text-muted">{{ a.text }}</span>
-          </li>
-        </ul>
+        <DirectorRoundTracker v-if="game.phase === 'answering'" :game="game" />
 
-        <ul v-if="game.phase === 'results'" class="player-list">
-          <li v-for="a in game.answers.filter(x => x.id)" :key="a.id">
-            <span>{{ a.text }}</span>
-            <span class="text-muted">
-              {{ a.voteCount }} {{ a.voteCount === 1 ? 'voto' : 'voti' }}
-              <template v-if="a.authorName"> · {{ a.authorName }}</template>
-            </span>
-          </li>
-        </ul>
+        <div
+          v-if="game.phase === 'results' && resultAnswerItems.length"
+          class="director__player-status"
+        >
+          <h3 class="director__subsection-title">Risposte date</h3>
+          <NumberedList :items="resultAnswerItems" />
+        </div>
 
         <RoundResult v-if="game.phase === 'results'" :game="game" />
 
@@ -104,7 +104,86 @@ async function toLobby() {
           </BaseButton>
         </div>
       </div>
+
+      <aside class="director__aside">
+        <QrCodePanel :url="joinUrl" label="QR per i giocatori" hover-zoom />
+
+        <div class="card director__players-card">
+          <h2 class="director__section-title">Giocatori</h2>
+          <PlayerList :players="game.players" show-status />
+        </div>
+      </aside>
     </div>
   </section>
   <p v-else class="text-muted">Caricamento partita…</p>
 </template>
+
+<style scoped>
+.director {
+  width: 100%;
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+}
+
+.director__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 3px solid var(--color-border);
+}
+
+.director__title {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.director__grid {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .director__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.director__main {
+  min-width: 0;
+}
+
+.director__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-width: 0;
+}
+
+.director__section-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0 0 var(--space-md);
+}
+
+.director__player-status {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--color-bg);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.director__subsection-title {
+  margin: 0 0 var(--space-sm);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.director__players-card {
+  flex: 1;
+}
+</style>

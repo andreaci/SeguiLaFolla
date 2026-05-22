@@ -173,44 +173,94 @@
   box-shadow: var(--shadow);
 }
 
-.option-grid {
+.numbered-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
-.option-btn {
-  text-align: left;
+.numbered-list__row {
+  list-style: none;
+}
+
+.numbered-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
   padding: var(--space-md);
   background: var(--color-bg);
   border: 3px solid var(--color-border);
   border-radius: var(--radius-sm);
-  color: var(--color-text);
-  cursor: pointer;
-  font-weight: 600;
   box-shadow: 2px 2px 0 var(--color-border);
 }
 
-.option-btn:hover:not(:disabled),
-.option-btn--selected {
-  border-color: var(--color-border);
+.numbered-list__item--interactive {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.numbered-list__item--interactive:hover:not(:disabled):not(.numbered-list__item--locked) {
   background: var(--color-accent);
 }
 
-.option-btn:disabled,
-.option-btn--locked {
-  opacity: 0.5;
+.numbered-list__item--interactive.numbered-list__item--selected {
+  background: var(--color-accent);
+}
+
+.numbered-list__item--interactive:disabled,
+.numbered-list__item--interactive.numbered-list__item--locked {
+  opacity: 0.55;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-.option-btn--selected.option-btn--locked {
+.numbered-list__item--interactive.numbered-list__item--selected.numbered-list__item--locked {
   opacity: 1;
-  border-color: var(--color-border);
   background: var(--color-accent-soft);
 }
 
-.answer-form--waiting .option-grid,
+.numbered-list__badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--color-accent);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.numbered-list__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.numbered-list__primary {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.numbered-list__secondary {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.answer-form--waiting .numbered-list,
 .answer-form--waiting form {
   pointer-events: none;
 }
@@ -263,19 +313,6 @@
 
 .vote-item--chosen {
   background: var(--color-accent);
-}
-
-.qr-panel {
-  text-align: center;
-}
-
-.qr-panel img {
-  max-width: 220px;
-  border-radius: var(--radius-sm);
-  background: #fff;
-  padding: var(--space-sm);
-  border: 3px solid var(--color-border);
-  box-shadow: var(--shadow);
 }
 
 .actions-row {

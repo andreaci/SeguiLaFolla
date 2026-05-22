@@ -10,7 +10,11 @@ builder.Services.AddSingleton<AuthService>();
 builder.Services.AddSingleton<ScoringService>();
 builder.Services.AddSingleton<GameService>();
 builder.Services.AddSignalR();
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    });
 
 var corsOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
     ?? ["http://localhost:5173", "http://127.0.0.1:5173"];

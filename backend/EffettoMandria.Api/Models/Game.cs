@@ -92,6 +92,7 @@ public class AnswerStateDto
     public string Text { get; set; } = "";
     public int VoteCount { get; set; }
     public bool IsMine { get; set; }
+    public Guid? AuthorUserId { get; set; }
     public string? AuthorName { get; set; }
     public bool RevealAuthor { get; set; }
 }

@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using EffettoMandria.Api.Models;
 
 namespace EffettoMandria.Api.Services;
@@ -50,7 +51,8 @@ public class QuestionService
         public int Id { get; set; }
         public string? Tipo { get; set; }
         public string? Domanda { get; set; }
-        public List<string>? Opzioni { get; set; }
 
+        [JsonPropertyName("opzioni")]
+        public List<string>? Opzioni { get; set; }
     }
 }
