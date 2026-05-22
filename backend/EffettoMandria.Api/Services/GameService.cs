@@ -110,7 +110,8 @@ public class GameService
                     Penalties = p.Penalties,
                     HasSubmittedAnswer = p.HasSubmittedAnswer,
                     HasVoted = p.HasVoted,
-                    AnsweredThisRound = game.CurrentAnswers.Any(a => a.AuthorUserId == p.UserId)
+                    AnsweredThisRound = game.CurrentAnswers.Any(a => a.AuthorUserId == p.UserId),
+                    HasActivePenalty = game.ActivePenaltyUserId == p.UserId
                 })
                 .ToList(),
             Answers = BuildAnswerDtos(game, viewer, isDirector, revealAuthors, voteCounts),
@@ -126,14 +127,25 @@ public class GameService
         };
     }
 
-    public async Task StartRoundAsync(Game game)
+    public IReadOnlyList<QuestionCategoryDto> GetQuestionCategories(Game game) =>
+        _questions.GetCategories(game.UsedQuestionIds);
+
+    public async Task StartRoundAsync(Game game, string? category = null)
     {
         if (game.Phase != GamePhase.Lobby && game.Phase != GamePhase.Results)
             throw new InvalidOperationException("Impossibile avviare un turno in questa fase.");
 
-        var question = _questions.PickRandom(game.UsedQuestionIds);
+        var normalizedCategory = string.IsNullOrWhiteSpace(category) ? null : category.Trim();
+        var question = _questions.PickRandom(game.UsedQuestionIds, normalizedCategory);
         if (question is null)
         {
+            if (normalizedCategory is not null)
+            {
+                var label = _questions.GetCategories(game.UsedQuestionIds)
+                    .FirstOrDefault(c => string.Equals(c.Id, normalizedCategory, StringComparison.OrdinalIgnoreCase))
+                    ?.Label ?? normalizedCategory;
+                throw new InvalidOperationException($"Nessuna domanda rimasta nella categoria «{label}».");
+            }
             game.Phase = GamePhase.Finished;
             await NotifyGameAsync(game.Id);
             return;

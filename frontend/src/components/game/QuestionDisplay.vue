@@ -5,6 +5,8 @@ import NumberedList from '../ui/NumberedList.vue'
 import {
   getQuestionOptions,
   isMultiplaQuestion,
+  formatCategoryLabel,
+  questionCategory,
   questionText,
 } from '../../utils/question'
 
@@ -25,11 +27,14 @@ const choiceItems = computed(() =>
     primary: opt,
   }))
 )
+
+const category = computed(() => formatCategoryLabel(questionCategory(props.question)))
 </script>
 
 <template>
   <div class="question-box">
     <span class="question-box__type text-muted">
+      <template v-if="category">{{ category }} · </template>
       {{ multipla ? 'Scelta multipla' : 'Domanda aperta' }}
     </span>
     <p class="question-box__text">{{ questionText(question) }}</p>

@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import type { GameState, PlayerState } from '../../types'
 import PlayerName from './PlayerName.vue'
+import { playerHasPoop } from '../../utils/penalty'
 
 const props = defineProps<{
   game: GameState
@@ -23,6 +24,7 @@ export interface TrackerRow {
   displayName: string
   answered: boolean
   answerText?: string
+  hasActivePenalty: boolean
 }
 
 const pendingCount = computed(() =>
@@ -50,6 +52,7 @@ function buildRow(p: PlayerState): TrackerRow {
     displayName: p.displayName,
     answered,
     answerText: answered ? answerByUserId.value.get(p.userId) : undefined,
+    hasActivePenalty: p.hasActivePenalty,
   }
 }
 
@@ -105,6 +108,7 @@ function setFilter(mode: FilterMode) {
           :name="row.displayName"
           :user-id="row.userId"
           :active-penalty-user-id="game.activePenaltyUserId"
+          :show-poop="playerHasPoop(row, game.activePenaltyUserId)"
         />
         <span v-if="row.answered && row.answerText" class="round-tracker__answer">
           {{ row.answerText }}

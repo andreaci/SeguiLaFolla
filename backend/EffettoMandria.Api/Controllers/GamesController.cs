@@ -71,8 +71,18 @@ public class GamesController : ControllerBase
         return NoContent();
     }
 
+    [HttpGet("{id:guid}/question-categories")]
+    public IActionResult QuestionCategories(Guid id)
+    {
+        var user = TryGetUser();
+        if (user is null) return Unauthorized();
+        if (!TryGetGame(id, out var game)) return NotFound(new { error = "Partita non trovata." });
+        if (game.DirectorUserId != user.Id) return Forbid();
+        return Ok(_games.GetQuestionCategories(game));
+    }
+
     [HttpPost("{id:guid}/round/start")]
-    public async Task<IActionResult> StartRound(Guid id)
+    public async Task<IActionResult> StartRound(Guid id, [FromBody] StartRoundRequest? req)
     {
         var user = TryGetUser();
         if (user is null) return Unauthorized();
@@ -80,7 +90,7 @@ public class GamesController : ControllerBase
         if (game.DirectorUserId != user.Id) return Forbid();
         try
         {
-            await _games.StartRoundAsync(game);
+            await _games.StartRoundAsync(game, req?.Categoria);
             return Ok(_games.GetState(game, user));
         }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }

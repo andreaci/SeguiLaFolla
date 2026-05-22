@@ -1,5 +1,5 @@
 import { apiUrl } from '../config/api'
-import type { AuthResponse, GameState, GameSummary, UserInfo } from '../types'
+import type { AuthResponse, GameState, GameSummary, QuestionCategory, UserInfo } from '../types'
 
 const AUTH_HEADER = 'X-Auth-Token'
 
@@ -78,8 +78,14 @@ export const api = {
   leaveGame: (id: string) =>
     request<void>(`/api/games/${id}/leave`, { method: 'POST' }),
 
-  startRound: (id: string) =>
-    request<GameState>(`/api/games/${id}/round/start`, { method: 'POST' }),
+  getQuestionCategories: (id: string) =>
+    request<QuestionCategory[]>(`/api/games/${id}/question-categories`),
+
+  startRound: (id: string, categoria?: string | null) =>
+    request<GameState>(`/api/games/${id}/round/start`, {
+      method: 'POST',
+      body: JSON.stringify({ categoria: categoria ?? null }),
+    }),
 
   submitAnswer: (id: string, text: string) =>
     request<GameState>(`/api/games/${id}/answer`, {

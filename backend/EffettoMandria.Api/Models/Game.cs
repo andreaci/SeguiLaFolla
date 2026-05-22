@@ -88,6 +88,7 @@ public class PlayerStateDto
     public bool HasSubmittedAnswer { get; set; }
     public bool HasVoted { get; set; }
     public bool AnsweredThisRound { get; set; }
+    public bool HasActivePenalty { get; set; }
 }
 
 public class AnswerStateDto

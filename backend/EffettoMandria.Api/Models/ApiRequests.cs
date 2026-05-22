@@ -6,3 +6,4 @@ public record GuestRequest(string DisplayName);
 public record CreateGameRequest(string Name);
 public record SubmitAnswerRequest(string Text);
 public record SubmitVoteRequest(Guid AnswerId);
+public record StartRoundRequest(string? Categoria);

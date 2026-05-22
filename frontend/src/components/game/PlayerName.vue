@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import PenaltyPoop from '../ui/PenaltyPoop.vue'
+import { computed } from 'vue'
 import { hasActivePenalty } from '../../utils/penalty'
 
-defineProps<{
+const props = defineProps<{
   name: string
   userId: string
   activePenaltyUserId?: string | null
+  showPoop?: boolean
 }>()
+
+const show = computed(
+  () => props.showPoop ?? hasActivePenalty(props.userId, props.activePenaltyUserId)
+)
 </script>
 
 <template>
   <span class="player-name">
-    <PenaltyPoop v-if="hasActivePenalty(userId, activePenaltyUserId)" />
+    <PenaltyPoop v-if="show" />
     <span class="player-name__text">{{ name }}</span>
   </span>
 </template>

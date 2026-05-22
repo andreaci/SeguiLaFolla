@@ -1,16 +1,31 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import type { GameState } from '../../types'
 import BaseButton from '../ui/BaseButton.vue'
 import PenaltyPoop from '../ui/PenaltyPoop.vue'
 import PlayerName from './PlayerName.vue'
+import DirectorCategoryPicker from './DirectorCategoryPicker.vue'
+import { hasActivePenalty, playerHasPoop } from '../../utils/penalty'
+
+const selectedCategory = defineModel<string | null>('selectedCategory', { default: null })
 
 const props = defineProps<{
   game: GameState
+  gameId: string
   showNextButton?: boolean
+  loading?: boolean
 }>()
 
+const categoryPickerRef = ref<InstanceType<typeof DirectorCategoryPicker> | null>(null)
+
 const emit = defineEmits<{ next: [] }>()
+
+function onNext() {
+  emit('next')
+  categoryPickerRef.value?.reload()
+}
+
+defineExpose({ reloadCategories: () => categoryPickerRef.value?.reload() })
 
 const result = computed(() => props.game.lastRoundResult)
 
@@ -23,7 +38,9 @@ const penaltyPlayer = computed(() => {
 })
 
 const roundPenaltyApplied = computed(
-  () => !!result.value?.penaltyUserId && result.value.penaltyUserId === props.game.activePenaltyUserId
+  () =>
+    !!result.value?.penaltyUserId &&
+    hasActivePenalty(result.value.penaltyUserId, props.game.activePenaltyUserId)
 )
 </script>
 
@@ -35,7 +52,7 @@ const roundPenaltyApplied = computed(
     aria-modal="true"
     aria-labelledby="round-modal-title"
   >
-    <div class="round-modal__backdrop" />
+    <div class="round-modal__backdrop" aria-hidden="true" />
     <div class="round-modal__panel card">
       <h2 id="round-modal-title" class="round-modal__title">Risultato turno</h2>
 
@@ -64,6 +81,10 @@ const roundPenaltyApplied = computed(
               :name="game.players.find((p) => p.userId === id)?.displayName ?? '?'"
               :user-id="id"
               :active-penalty-user-id="game.activePenaltyUserId"
+              :show-poop="playerHasPoop(
+                game.players.find((p) => p.userId === id) ?? { userId: id },
+                game.activePenaltyUserId
+              )"
             />
             <span class="round-modal__plus">+1 pt</span>
           </li>
@@ -91,9 +112,18 @@ const roundPenaltyApplied = computed(
       </div>
 
       <div class="round-modal__actions">
-        <BaseButton v-if="showNextButton" block @click="emit('next')">
+        <BaseButton v-if="showNextButton" block :disabled="loading" @click="onNext">
           Prossima domanda
         </BaseButton>
+        <DirectorCategoryPicker
+          v-if="showNextButton"
+          ref="categoryPickerRef"
+          v-model="selectedCategory"
+          :game-id="gameId"
+          game-phase="results"
+          :disabled="loading"
+          compact
+        />
         <p v-else class="round-modal__wait text-muted text-center">
           In attesa della prossima domanda…
         </p>
@@ -121,6 +151,7 @@ const roundPenaltyApplied = computed(
 
 .round-modal__panel {
   position: relative;
+  z-index: 1;
   width: min(100%, 520px);
   max-height: min(90vh, 640px);
   overflow-y: auto;
@@ -256,6 +287,8 @@ const roundPenaltyApplied = computed(
 
 .round-modal__actions {
   margin-top: var(--space-lg);
+  position: relative;
+  z-index: 2;
 }
 
 .round-modal__wait {

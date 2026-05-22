@@ -14,8 +14,15 @@ export interface AuthResponse {
 export interface QuestionDto {
   id: number
   tipo: 'aperta' | 'multipla'
+  categoria?: string
   domanda: string
   opzioni?: string[]
+}
+
+export interface QuestionCategory {
+  id: string
+  label: string
+  available: number
 }
 
 export interface PlayerState {
@@ -26,6 +33,7 @@ export interface PlayerState {
   hasSubmittedAnswer: boolean
   hasVoted: boolean
   answeredThisRound: boolean
+  hasActivePenalty?: boolean
 }
 
 export interface AnswerState {

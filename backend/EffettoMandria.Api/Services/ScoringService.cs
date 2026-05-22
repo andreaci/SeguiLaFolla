@@ -33,11 +33,13 @@ public class ScoringService
             a => a.Id,
             a => byText.First(g => g.Text.Equals(a.Text.Trim(), StringComparison.OrdinalIgnoreCase)).Count);
 
-        if (byText.Count == 1 && byText[0].Count == 1)
+        // Penalità: una sola risposta distinta ha ricevuto esattamente un voto (risposta solitaria).
+        var loneVoteGroups = byText.Where(x => x.Count == 1).ToList();
+        if (loneVoteGroups.Count == 1)
         {
-            var lone = byText[0].Answers[0];
-            result.PenaltyUserId = lone.AuthorUserId;
-            result.PenaltyReason = "Risposta solitaria: penalità!";
+            var penalized = loneVoteGroups[0].Answers[0];
+            result.PenaltyUserId = penalized.AuthorUserId;
+            result.PenaltyReason = "Unica risposta con un solo voto: hai la cacca rosa!";
         }
 
         var maxCount = byText.Max(x => x.Count);

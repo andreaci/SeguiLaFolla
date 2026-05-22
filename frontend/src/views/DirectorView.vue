@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useGameStore } from '../stores/game'
 import { api } from '../api/client'
@@ -27,15 +27,18 @@ onMounted(async () => {
 })
 onUnmounted(() => gameStore.unsubscribe())
 
-async function startRound() {
-  await gameStore.run(() => api.startRound(gameId))
-}
-
 async function forceEndTurn() {
   await gameStore.run(() => api.forceEndTurn(gameId))
 }
 
 const canForceEndTurn = computed(() => game.value?.phase === 'answering')
+
+/** null = tutte le categorie */
+const selectedCategory = ref<string | null>(null)
+
+async function startRound() {
+  await gameStore.run(() => api.startRound(gameId, selectedCategory.value))
+}
 
 async function toLobby() {
   await gameStore.run(() => api.toLobby(gameId))
@@ -98,8 +101,11 @@ async function toLobby() {
 
   <RoundResultModal
     v-if="game?.phase === 'results'"
+    v-model:selected-category="selectedCategory"
     :game="game"
+    :game-id="gameId"
     show-next-button
+    :loading="gameStore.loading"
     @next="startRound"
   />
 </template>

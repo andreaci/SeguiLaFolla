@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { PlayerState } from '../../types'
 import PlayerName from './PlayerName.vue'
+import { playerHasPoop } from '../../utils/penalty'
 
 defineProps<{
   players: PlayerState[]
@@ -18,6 +19,7 @@ defineProps<{
           :name="p.displayName"
           :user-id="p.userId"
           :active-penalty-user-id="activePenaltyUserId"
+          :show-poop="playerHasPoop(p, activePenaltyUserId)"
         />
         <span v-if="showStatus" class="player-list__meta">
           <template v-if="p.answeredThisRound"> · ha risposto</template>

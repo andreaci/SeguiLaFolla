@@ -10,6 +10,8 @@ import QuestionDisplay from '../components/game/QuestionDisplay.vue'
 import AnswerForm from '../components/game/AnswerForm.vue'
 import RoundResultModal from '../components/game/RoundResultModal.vue'
 import PlayerName from '../components/game/PlayerName.vue'
+import PenaltyPoop from '../components/ui/PenaltyPoop.vue'
+import { hasActivePenalty } from '../utils/penalty'
 
 const route = useRoute()
 const router = useRouter()
@@ -38,6 +40,14 @@ const myScore = computed(() => {
   const g = game.value
   if (!g?.myUserId) return 0
   return g.players.find((p) => p.userId === g.myUserId)?.score ?? 0
+})
+
+const iHavePoopPenalty = computed(() => {
+  const g = game.value
+  if (!g?.myUserId) return false
+  const me = g.players.find((p) => p.userId === g.myUserId)
+  if (me?.hasActivePenalty) return true
+  return hasActivePenalty(g.myUserId, g.activePenaltyUserId)
 })
 
 function resetLocalRound() {
@@ -110,10 +120,16 @@ async function submitAnswer(text: string) {
         :name="auth.user.displayName"
         :user-id="game.myUserId"
         :active-penalty-user-id="game.activePenaltyUserId"
+        :show-poop="iHavePoopPenalty"
       />
       <template v-else>{{ auth.user?.displayName }}</template>
       · {{ myScore }} pt
     </p>
+
+    <div v-if="iHavePoopPenalty" class="play__poop-banner card" role="status">
+      <PenaltyPoop size="large" /><br />
+      <span>Hai la penalità della foll(i)a!</span>
+    </div>
 
     <BaseAlert v-if="gameStore.error">{{ gameStore.error }}</BaseAlert>
 
@@ -165,5 +181,23 @@ async function submitAnswer(text: string) {
 
 .play__waiting-results {
   margin-top: var(--space-md);
+}
+
+.play__poop-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  background: #fff8e8;
+  border: 3px dashed var(--color-border);
+  font-weight: 800;
+  text-align: center;
+}
+
+.play__poop-banner :deep(.penalty-poop__svg) {
+  width: 2rem;
+  height: 2rem;
 }
 </style>

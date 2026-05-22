@@ -4,6 +4,7 @@ type QuestionRaw = QuestionDto & {
   Opzioni?: string[]
   Tipo?: string
   Domanda?: string
+  Categoria?: string
 }
 
 export function questionTipo(q?: QuestionDto | null): string {
@@ -27,4 +28,16 @@ export function questionText(q?: QuestionDto | null): string {
   if (!q) return ''
   const raw = q as QuestionRaw
   return raw.domanda ?? raw.Domanda ?? ''
+}
+
+export function questionCategory(q?: QuestionDto | null): string {
+  if (!q) return ''
+  const raw = q as QuestionRaw
+  return (raw.categoria ?? raw.Categoria ?? '').trim()
+}
+
+export function formatCategoryLabel(cat: string): string {
+  const t = cat.trim()
+  if (!t) return ''
+  return t.charAt(0).toUpperCase() + t.slice(1)
 }
