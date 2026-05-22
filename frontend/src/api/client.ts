@@ -36,7 +36,9 @@ async function request<T>(
     throw new Error((body as { error?: string }).error ?? res.statusText)
   }
   if (res.status === 204) return undefined as T
-  return res.json() as Promise<T>
+  const text = await res.text()
+  if (!text.trim()) return undefined as T
+  return JSON.parse(text) as T
 }
 
 export const api = {

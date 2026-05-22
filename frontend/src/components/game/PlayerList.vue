@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { PlayerState } from '../../types'
+import PlayerName from './PlayerName.vue'
 
 defineProps<{
   players: PlayerState[]
   showStatus?: boolean
+  activePenaltyUserId?: string | null
 }>()
 </script>
 
@@ -11,16 +13,18 @@ defineProps<{
   <ul class="player-list">
     <li v-for="p in players" :key="p.userId">
       <div>
-        <span class="player-list__name">{{ p.displayName }}</span>
+        <PlayerName
+          class="player-list__name"
+          :name="p.displayName"
+          :user-id="p.userId"
+          :active-penalty-user-id="activePenaltyUserId"
+        />
         <span v-if="showStatus" class="player-list__meta">
           <template v-if="p.answeredThisRound"> · ha risposto</template>
           <template v-if="p.hasVoted"> · ha votato</template>
         </span>
       </div>
-      <span class="player-list__meta">
-        {{ p.score }} pt
-        <template v-if="p.penalties > 0"> · {{ p.penalties }} pen.</template>
-      </span>
+      <span class="player-list__meta">{{ p.score }} pt</span>
     </li>
   </ul>
 </template>

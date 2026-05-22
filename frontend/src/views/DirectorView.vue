@@ -7,12 +7,9 @@ import BaseButton from '../components/ui/BaseButton.vue'
 import BaseAlert from '../components/ui/BaseAlert.vue'
 import PlayerList from '../components/game/PlayerList.vue'
 import QuestionDisplay from '../components/game/QuestionDisplay.vue'
-import RoundResult from '../components/game/RoundResult.vue'
+import RoundResultModal from '../components/game/RoundResultModal.vue'
 import DirectorRoundTracker from '../components/game/DirectorRoundTracker.vue'
 import QrCodePanel from '../components/game/QrCodePanel.vue'
-import NumberedList from '../components/ui/NumberedList.vue'
-import type { NumberedListItem } from '../components/ui/NumberedList.vue'
-
 const route = useRoute()
 const router = useRouter()
 const gameStore = useGameStore()
@@ -40,18 +37,6 @@ async function forceEndTurn() {
 
 const canForceEndTurn = computed(() => game.value?.phase === 'answering')
 
-const resultAnswerItems = computed((): NumberedListItem[] => {
-  const g = game.value
-  if (!g || g.phase !== 'results') return []
-  return g.answers
-    .filter((a) => a.id)
-    .map((a) => {
-      const votes = `${a.voteCount} ${a.voteCount === 1 ? 'voto' : 'voti'}`
-      const secondary = a.authorName ? `${votes} · ${a.authorName}` : votes
-      return { id: a.id, primary: a.text, secondary }
-    })
-})
-
 async function toLobby() {
   await gameStore.run(() => api.toLobby(gameId))
 }
@@ -59,7 +44,7 @@ async function toLobby() {
 
 <template>
   <section v-if="game" class="director">
-    <header class="director__header">
+    <header class="director__header" >
       <h1 class="director__title">{{ game.name }}</h1>
     </header>
 
@@ -78,19 +63,9 @@ async function toLobby() {
 
         <DirectorRoundTracker v-if="game.phase === 'answering'" :game="game" />
 
-        <div
-          v-if="game.phase === 'results' && resultAnswerItems.length"
-          class="director__player-status"
-        >
-          <h3 class="director__subsection-title">Risposte date</h3>
-          <NumberedList :items="resultAnswerItems" />
-        </div>
-
-        <RoundResult v-if="game.phase === 'results'" :game="game" />
-
         <div class="actions-row">
-          <BaseButton v-if="game.phase === 'lobby' || game.phase === 'results'" @click="startRound">
-            {{ game.phase === 'results' ? 'Prossima domanda' : 'Inizia turno' }}
+          <BaseButton v-if="game.phase === 'lobby'" @click="startRound">
+            Inizia turno
           </BaseButton>
           <BaseButton
             v-if="canForceEndTurn"
@@ -110,12 +85,23 @@ async function toLobby() {
 
         <div class="card director__players-card">
           <h2 class="director__section-title">Giocatori</h2>
-          <PlayerList :players="game.players" show-status />
+          <PlayerList
+            :players="game.players"
+            show-status
+            :active-penalty-user-id="game.activePenaltyUserId"
+          />
         </div>
       </aside>
     </div>
   </section>
   <p v-else class="text-muted">Caricamento partita…</p>
+
+  <RoundResultModal
+    v-if="game?.phase === 'results'"
+    :game="game"
+    show-next-button
+    @next="startRound"
+  />
 </template>
 
 <style scoped>

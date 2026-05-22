@@ -68,7 +68,7 @@ public class GamesController : ControllerBase
         if (user.CurrentGameId != id)
             return BadRequest(new { error = "Non sei in questa partita." });
         _games.LeaveGame(user);
-        return Ok();
+        return NoContent();
     }
 
     [HttpPost("{id:guid}/round/start")]

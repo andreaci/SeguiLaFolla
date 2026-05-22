@@ -47,6 +47,13 @@ public class GameService
             throw new InvalidOperationException("Sei già in un'altra partita.");
         if (user.Id == game.DirectorUserId)
             throw new InvalidOperationException("Il direttore di gioco non partecipa come giocatore.");
+        if (game.Players.ContainsKey(user.Id))
+        {
+            user.CurrentGameId = gameId;
+            return game;
+        }
+        if (IsDisplayNameTakenInGame(game, user.DisplayName, user.Id))
+            throw new InvalidOperationException("Questo nome è già usato in partita. Scegline un altro.");
         AddPlayer(game, user);
         user.CurrentGameId = gameId;
         _ = NotifyGameAsync(gameId);
@@ -108,6 +115,7 @@ public class GameService
                 .ToList(),
             Answers = BuildAnswerDtos(game, viewer, isDirector, revealAuthors, voteCounts),
             LastRoundResult = game.LastRoundResult,
+            ActivePenaltyUserId = game.ActivePenaltyUserId,
             IsDirector = isDirector,
             MyUserId = viewer?.Id,
             HasSubmittedAnswer = myPlayer != null && (
@@ -229,6 +237,15 @@ public class GameService
 
     private static IEnumerable<GamePlayer> GetParticipatingPlayers(Game game) =>
         game.Players.Values.Where(p => p.UserId != game.DirectorUserId);
+
+    private static bool IsDisplayNameTakenInGame(Game game, string displayName, Guid? excludeUserId = null)
+    {
+        var normalized = displayName.Trim();
+        if (string.IsNullOrEmpty(normalized)) return false;
+        return GetParticipatingPlayers(game).Any(p =>
+            p.UserId != excludeUserId &&
+            string.Equals(p.DisplayName.Trim(), normalized, StringComparison.OrdinalIgnoreCase));
+    }
 
     private static void AddPlayer(Game game, User user)
     {

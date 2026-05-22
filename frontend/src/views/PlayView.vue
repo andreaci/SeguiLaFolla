@@ -8,7 +8,8 @@ import PhaseBadge from '../components/ui/PhaseBadge.vue'
 import BaseAlert from '../components/ui/BaseAlert.vue'
 import QuestionDisplay from '../components/game/QuestionDisplay.vue'
 import AnswerForm from '../components/game/AnswerForm.vue'
-import RoundResult from '../components/game/RoundResult.vue'
+import RoundResultModal from '../components/game/RoundResultModal.vue'
+import PlayerName from '../components/game/PlayerName.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -55,7 +56,8 @@ onMounted(async () => {
       await api.joinGame(gameId)
       await auth.loadMe()
     } catch {
-      /* already in game or error shown by store */
+      router.replace(`/entra/${gameId}`)
+      return
     }
   } else if (!auth.user?.currentGameId) {
     try {
@@ -102,8 +104,15 @@ async function submitAnswer(text: string) {
       <PhaseBadge :phase="game.phase" />
     </div>
 
-    <p class="text-muted text-center">
-      {{ auth.user?.displayName }} · {{ myScore }} pt
+    <p class="play__identity text-muted text-center">
+      <PlayerName
+        v-if="auth.user && game.myUserId"
+        :name="auth.user.displayName"
+        :user-id="game.myUserId"
+        :active-penalty-user-id="game.activePenaltyUserId"
+      />
+      <template v-else>{{ auth.user?.displayName }}</template>
+      · {{ myScore }} pt
     </p>
 
     <BaseAlert v-if="gameStore.error">{{ gameStore.error }}</BaseAlert>
@@ -130,10 +139,9 @@ async function submitAnswer(text: string) {
         />
       </div>
 
-      <template v-else-if="game.phase === 'results'">
-        <RoundResult :game="game" />
-        <p class="text-muted text-center">In attesa della prossima domanda…</p>
-      </template>
+      <p v-else-if="game.phase === 'results'" class="text-muted text-center play__waiting-results">
+        Guarda il risultato del turno…
+      </p>
 
       <p v-else-if="game.phase === 'finished'" class="card text-center">
         Partita terminata. Grazie per aver giocato!
@@ -141,4 +149,21 @@ async function submitAnswer(text: string) {
     </template>
   </section>
   <p v-else class="text-muted text-center">Caricamento…</p>
+
+  <RoundResultModal v-if="game?.phase === 'results'" :game="game" />
 </template>
+
+<style scoped>
+.play__identity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  font-weight: 700;
+}
+
+.play__waiting-results {
+  margin-top: var(--space-md);
+}
+</style>

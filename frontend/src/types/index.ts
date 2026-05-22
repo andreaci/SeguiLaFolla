@@ -39,6 +39,7 @@ export interface AnswerState {
 }
 
 export interface RoundResult {
+  isTie?: boolean
   winningAnswerId?: string
   winningAnswerText?: string
   winningVoteCount: number
@@ -56,6 +57,7 @@ export interface GameState {
   players: PlayerState[]
   answers: AnswerState[]
   lastRoundResult?: RoundResult
+  activePenaltyUserId?: string
   isDirector: boolean
   myUserId?: string
   hasSubmittedAnswer: boolean

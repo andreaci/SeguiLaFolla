@@ -21,6 +21,8 @@ public class Game
     public List<RoundAnswer> CurrentAnswers { get; } = [];
     public List<RoundVote> CurrentVotes { get; } = [];
     public RoundResultDto? LastRoundResult { get; set; }
+    /// <summary>Giocatore che porta la penalità visibile fino al prossimo evento penalità.</summary>
+    public Guid? ActivePenaltyUserId { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
 
@@ -50,6 +52,7 @@ public class RoundVote
 
 public class RoundResultDto
 {
+    public bool IsTie { get; set; }
     public Guid? WinningAnswerId { get; set; }
     public string? WinningAnswerText { get; set; }
     public int WinningVoteCount { get; set; }
@@ -68,6 +71,7 @@ public class GameStateDto
     public List<PlayerStateDto> Players { get; set; } = [];
     public List<AnswerStateDto> Answers { get; set; } = [];
     public RoundResultDto? LastRoundResult { get; set; }
+    public Guid? ActivePenaltyUserId { get; set; }
     public bool IsDirector { get; set; }
     public Guid? MyUserId { get; set; }
     public bool HasSubmittedAnswer { get; set; }

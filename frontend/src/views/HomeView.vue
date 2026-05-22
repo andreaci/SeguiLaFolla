@@ -2,12 +2,23 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useDirectorStart } from '../composables/useDirectorStart'
+import { hideAuthButtons } from '../config/features'
 import BaseButton from '../components/ui/BaseButton.vue'
 import BaseAlert from '../components/ui/BaseAlert.vue'
+import AlreadyInGamePrompt from '../components/game/AlreadyInGamePrompt.vue'
 
 const router = useRouter()
-const { auth, error, loading, startAsGuestDirector, createGameWithCurrentUser } =
-  useDirectorStart()
+const {
+  auth,
+  error,
+  loading,
+  hasCurrentGame,
+  isAlreadyInGameError,
+  startAsGuestDirector,
+  createGameWithCurrentUser,
+  resumeCurrentGame,
+  createNewGame,
+} = useDirectorStart()
 
 const hasAccount = computed(
   () => auth.isLoggedIn && auth.user != null && !auth.user.isGuest
@@ -16,14 +27,21 @@ const hasAccount = computed(
 
 <template>
   <section class="home">
-    <header class="home__hero">
-      <h1 class="home__title">Effetto Mandria</h1>
+    <header class="home__hero" >
+      <h1 class="home__title">Segui la foll(i)a</h1>
       <p class="home__tagline text-muted">
         Il gioco da tavolo: rispondi come la mandria, vota la risposta più popolare e guadagna punti.
       </p>
     </header>
 
-    <BaseAlert v-if="error">{{ error }}</BaseAlert>
+    <AlreadyInGamePrompt
+      v-if="error && isAlreadyInGameError"
+      :message="error"
+      :loading="loading"
+      @resume="resumeCurrentGame"
+      @create-new="createNewGame"
+    />
+    <BaseAlert v-else-if="error">{{ error }}</BaseAlert>
 
     <div class="home__columns">
       <div class="home__panel card home__panel--director">
@@ -31,8 +49,18 @@ const hasAccount = computed(
         <p class="text-muted">
           Sei il direttore? Crea la partita e mostra il QR ai giocatori. Non serve un account.
         </p>
-        <div class="home-panel__actions">        <BaseButton
-            v-if="!auth.isLoggedIn"
+        <div class="home-panel__actions">
+          <BaseButton
+            v-if="hasCurrentGame"
+            block
+            variant="secondary"
+            :disabled="loading"
+            @click="resumeCurrentGame"
+          >
+            Torna alla partita in corso
+          </BaseButton>
+          <BaseButton
+            v-if="!auth.isLoggedIn && !hideAuthButtons"
             block
             variant="secondary"
             @click="router.push('/accedi')"
@@ -40,31 +68,17 @@ const hasAccount = computed(
             Accedi
           </BaseButton>
           <BaseButton
-            v-if="!auth.isLoggedIn"
+            v-if="!auth.isLoggedIn && !hideAuthButtons"
             block
             variant="secondary"
             @click="router.push('/registrati')"
           >
             Registrati
           </BaseButton>
-          <BaseButton
-            v-if="!auth.isLoggedIn"
-            block
-            :disabled="loading"
-            @click="startAsGuestDirector"
-          >
-            Avvio rapido
-          </BaseButton>
-          <BaseButton
-            v-else
-            block
-            :disabled="loading"
-            @click="createGameWithCurrentUser"
-          >
-            {{ hasAccount ? 'Crea partita' : 'Avvia partita' }}
-          </BaseButton>
-          <BaseButton block variant="secondary" :disabled="loading" @click="router.push('/direttore')">
-            Impostazioni partita
+
+         
+          <BaseButton block :disabled="loading" @click="router.push('/direttore')">
+            Avvia partita
           </BaseButton>
         </div>
       </div>
@@ -72,14 +86,8 @@ const hasAccount = computed(
       <div class="home__panel card home__panel--player">
         <h2 class="home__panel-title">Giocatore</h2>
         <p class="text-muted">
-          Scansiona il QR della partita o apri il link che ti ha dato il direttore dal telefono.
+          Scansiona con il telefono il QR della partita o apri il link che ti ha dato il direttore.
         </p>
-        <div class="home-panel__actions">
-  
-          <p v-if="auth.isLoggedIn" class="home__signed-in">
-            Ciao, <strong>{{ auth.user?.displayName }}</strong> — entra dalla partita con il QR.
-          </p>
-        </div>
       </div>
     </div>
   </section>

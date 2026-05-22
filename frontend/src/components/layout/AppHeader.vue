@@ -12,8 +12,8 @@ function logout() {
 </script>
 
 <template>
-  <header class="header">
-    <router-link to="/" class="header__brand">🐄 Effetto Mandria</router-link>
+  <header class="header" style="display:none">
+    <router-link to="/" class="header__brand">🐄 Segui la foll(i)a</router-link>
     <div class="header__actions">
       <span v-if="auth.user" class="header__user">{{ auth.user.displayName }}</span>
       <button v-if="auth.user" class="btn btn--secondary btn--sm" @click="logout">

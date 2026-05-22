@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import type { GameState, PlayerState } from '../../types'
+import PlayerName from './PlayerName.vue'
 
 const props = defineProps<{
   game: GameState
@@ -99,7 +100,12 @@ function setFilter(mode: FilterMode) {
         class="round-tracker__row"
         :class="{ 'round-tracker__row--pending': !row.answered }"
       >
-        <span class="round-tracker__name">{{ row.displayName }}</span>
+        <PlayerName
+          class="round-tracker__name"
+          :name="row.displayName"
+          :user-id="row.userId"
+          :active-penalty-user-id="game.activePenaltyUserId"
+        />
         <span v-if="row.answered && row.answerText" class="round-tracker__answer">
           {{ row.answerText }}
         </span>

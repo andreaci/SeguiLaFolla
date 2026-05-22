@@ -6,6 +6,7 @@ public class ScoringService
 {
     /// <summary>
     /// Ogni risposta inviata conta come un voto per quel testo (nessuna fase di votazione separata).
+    /// Pareggio al primo posto: nessun punto. Penalità solo se esiste una sola risposta distinta con un solo voto.
     /// </summary>
     public RoundResultDto CalculateFromAnswers(Game game)
     {
@@ -32,26 +33,27 @@ public class ScoringService
             a => a.Id,
             a => byText.First(g => g.Text.Equals(a.Text.Trim(), StringComparison.OrdinalIgnoreCase)).Count);
 
-        if (answers.Count == 1)
+        if (byText.Count == 1 && byText[0].Count == 1)
         {
-            var lone = answers[0];
+            var lone = byText[0].Answers[0];
             result.PenaltyUserId = lone.AuthorUserId;
-            result.WinningAnswerId = lone.Id;
-            result.WinningAnswerText = lone.Text;
-            result.WinningVoteCount = 1;
-            result.PenaltyReason = "Unica risposta: vince la penalità.";
-            return result;
+            result.PenaltyReason = "Risposta solitaria: penalità!";
         }
 
         var maxCount = byText.Max(x => x.Count);
         var winningGroups = byText.Where(x => x.Count == maxCount).ToList();
-        var primary = winningGroups[0];
 
-        result.WinningAnswerText = primary.Text;
-        result.WinningVoteCount = maxCount;
-        result.WinningAnswerId = primary.Answers[0].Id;
-        result.ScoredVoterIds = winningGroups
-            .SelectMany(g => g.Answers)
+        if (winningGroups.Count > 1)
+        {
+            result.IsTie = true;
+            return result;
+        }
+
+        var winner = winningGroups[0];
+        result.WinningAnswerText = winner.Text;
+        result.WinningVoteCount = winner.Count;
+        result.WinningAnswerId = winner.Answers[0].Id;
+        result.ScoredVoterIds = winner.Answers
             .Select(a => a.AuthorUserId)
             .Distinct()
             .ToList();
@@ -61,16 +63,20 @@ public class ScoringService
 
     public void ApplyRoundResult(Game game, RoundResultDto result)
     {
-        foreach (var playerId in result.ScoredVoterIds)
+        if (!result.IsTie)
         {
-            if (game.Players.TryGetValue(playerId, out var player))
-                player.Score++;
+            foreach (var playerId in result.ScoredVoterIds)
+            {
+                if (game.Players.TryGetValue(playerId, out var player))
+                    player.Score++;
+            }
         }
 
-        if (result.PenaltyUserId.HasValue &&
-            game.Players.TryGetValue(result.PenaltyUserId.Value, out var penalized))
+        if (result.PenaltyUserId.HasValue)
         {
-            penalized.Penalties++;
+            game.ActivePenaltyUserId = result.PenaltyUserId;
+            if (game.Players.TryGetValue(result.PenaltyUserId.Value, out var penalized))
+                penalized.Penalties++;
         }
     }
 }

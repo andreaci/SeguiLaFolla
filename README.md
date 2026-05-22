@@ -49,6 +49,8 @@ VITE_DEV_PROXY_TARGET=http://localhost:5230
 
 CORS sul backend serve solo per accesso diretto all’API senza proxy (`Cors:AllowedOrigins` in `appsettings.Development.json`).
 
+Opzionale: `VITE_HIDE_AUTH_BUTTONS=true` nasconde **Accedi** / **Registrati** nella home (e il link account in `/entra/:id`).
+
 ## Ruoli
 
 | Ruolo | URL | Descrizione |
