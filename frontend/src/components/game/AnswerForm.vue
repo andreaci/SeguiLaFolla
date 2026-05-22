@@ -4,6 +4,7 @@ import type { QuestionDto } from '../../types'
 import BaseButton from '../ui/BaseButton.vue'
 import ChoiceList from '../ui/ChoiceList.vue'
 import { getQuestionOptions, isMultiplaQuestion } from '../../utils/question'
+import { shuffleArray } from '../../utils/shuffle'
 
 const props = defineProps<{
   question: QuestionDto
@@ -18,7 +19,17 @@ const text = ref('')
 const locked = () => props.disabled || props.waiting
 
 const multipla = computed(() => isMultiplaQuestion(props.question))
-const options = computed(() => getQuestionOptions(props.question))
+
+/** Ordine casuale per giocatore; si rigenera a ogni nuova domanda. */
+const displayOptions = ref<string[]>([])
+
+watch(
+  () => props.question.id,
+  () => {
+    displayOptions.value = shuffleArray(getQuestionOptions(props.question))
+  },
+  { immediate: true }
+)
 
 watch(
   () => props.submittedText,
@@ -49,8 +60,8 @@ function submitOpen() {
     </p>
 
     <ChoiceList
-      v-if="multipla && options.length"
-      :options="options"
+      v-if="multipla && displayOptions.length"
+      :options="displayOptions"
       :disabled="locked()"
       :selected="waiting ? submittedText : null"
       @select="pickOption"

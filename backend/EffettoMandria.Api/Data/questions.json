@@ -2210,5 +2210,230 @@
       "Lascerei immediatamente"
     ],
     "id": 275
+  },
+  {
+    "id": 276,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Quale peccato capitale ti descrive meglio il lunedì mattina?"
+  },
+  {
+    "id": 277,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è la cosa più vanagloriosa che hai fatto per farti notare?"
+  },
+  {
+    "id": 278,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Di cosa sei invidioso/a ma non lo ammetteresti mai ad alta voce?"
+  },
+  {
+    "id": 279,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è la cosa più stupida per cui ti sei arrabbiato/a davvero tanto?"
+  },
+  {
+    "id": 280,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è la scusa più pigra che usi per rimandare qualcosa di importante?"
+  },
+  {
+    "id": 281,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è la cosa più inutile su cui hai speso soldi per impulso?"
+  },
+  {
+    "id": 282,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è il piatto che mangeresti anche se non avessi più fame?"
+  },
+  {
+    "id": 283,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è la cosa più imbarazzante che fai quando pensi che nessuno ti veda?"
+  },
+  {
+    "id": 284,
+    "tipo": "multipla",
+    "categoria": "peccati capitali",
+    "domanda": "Quale peccato capitale è il \"tuo\" peccato capitale?",
+    "opzioni": [
+      "Superbia",
+      "Invidia",
+      "Ira",
+      "Accidia",
+      "Avarizia",
+      "Gola",
+      "Lussuria"
+    ]
+  },
+  {
+    "id": 285,
+    "tipo": "multipla",
+    "categoria": "peccati capitali",
+    "domanda": "Preferiresti essere sempre sincero/a o sempre diplomatico/a?",
+    "opzioni": [
+      "Sempre sincero/a",
+      "Sempre diplomatico/a",
+      "Dipende da chi",
+      "Mento anche ai miei cari"
+    ]
+  },
+  {
+    "id": 286,
+    "tipo": "multipla",
+    "categoria": "peccati capitali",
+    "domanda": "Cosa ti tenta di più quando sei dieta?",
+    "opzioni": [
+      "Dolci",
+      "Snack salati di notte",
+      "Ordinare delivery",
+      "Finire quello che hanno gli altri"
+    ]
+  },
+  {
+    "id": 287,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Chi nella stanza ha più probabilità di finire all'inferno per una cosa ridicola?"
+  },
+  {
+    "id": 288,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Qual è il complimento che ti fa gonfiare il petto anche se non è vero?"
+  },
+  {
+    "id": 289,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è la prima cosa che controlli sul telefono appena sveglio/a?"
+  },
+  {
+    "id": 290,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è l'oggetto che perdi più spesso in casa?"
+  },
+  {
+    "id": 291,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è la cosa che rimandi sempre quando sei a casa?"
+  },
+  {
+    "id": 292,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è il suono della sveglia più crudele che potresti impostare?"
+  },
+  {
+    "id": 293,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è la scusa che usi per non rispondere subito ai messaggi?"
+  },
+  {
+    "id": 294,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è la cosa che compri sempre al supermercato e poi non usi mai?"
+  },
+  {
+    "id": 295,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Quanto tempo massimo riesci a stare senza guardare il telefono?"
+  },
+  {
+    "id": 296,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è la posizione più assurda in cui ti sei addormentato/a?"
+  },
+  {
+    "id": 297,
+    "tipo": "multipla",
+    "categoria": "vita quotidiana",
+    "domanda": "Cosa fai per prima cosa quando entri in casa?",
+    "opzioni": [
+      "Tolgo le scarpe e crollo",
+      "Controllo il frigo",
+      "Guardo il telefono",
+      "Vado dritto in bagno"
+    ]
+  },
+  {
+    "id": 298,
+    "tipo": "multipla",
+    "categoria": "vita quotidiana",
+    "domanda": "Come preferisci fare la spesa?",
+    "opzioni": [
+      "Lista precisa",
+      "A occhio e speriamo",
+      "Solo online",
+      "Mai, vivo di sopravvivenza"
+    ]
+  },
+  {
+    "id": 299,
+    "tipo": "multipla",
+    "categoria": "vita quotidiana",
+    "domanda": "Quale routine mattutina non salti mai?",
+    "opzioni": [
+      "Caffè o colazione",
+      "Scroll infinito",
+      "Doccia",
+      "Rimandare la sveglia"
+    ]
+  },
+  {
+    "id": 300,
+    "tipo": "multipla",
+    "categoria": "vita quotidiana",
+    "domanda": "Dove metti le chiavi quando arrivi a casa?",
+    "opzioni": [
+      "Sempre nello stesso posto",
+      "In tasca per giorni",
+      "Le cerco ogni volta",
+      "Non so, sono magiche"
+    ]
+  },
+  {
+    "id": 301,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è il piccolo lusso quotidiano senza cui non potresti vivere?"
+  },
+  {
+    "id": 302,
+    "tipo": "aperta",
+    "categoria": "vita quotidiana",
+    "domanda": "Qual è la cosa più noiosa della tua routine settimanale?"
+  },
+  {
+    "id": 303,
+    "tipo": "aperta",
+    "categoria": "peccati capitali",
+    "domanda": "Quale vizio piccolo ti costerebbe più caro smettere?"
+  },
+  {
+    "id": 304,
+    "tipo": "multipla",
+    "categoria": "peccati capitali",
+    "domanda": "Se potessi eliminare un solo vizio da te stesso, quale sceglieresti?",
+    "opzioni": [
+      "Procrastinare",
+      "Mentire per comodità",
+      "Sprechi inutili",
+      "Giudicare gli altri"
+    ]
   }
 ]
