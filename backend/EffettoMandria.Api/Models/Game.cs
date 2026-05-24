@@ -17,7 +17,7 @@ public class Game
     public GamePhase Phase { get; set; } = GamePhase.Lobby;
     public QuestionDto? CurrentQuestion { get; set; }
     public HashSet<int> UsedQuestionIds { get; set; } = [];
-    public Dictionary<Guid, GamePlayer> Players { get; } = new();
+    public Dictionary<Guid, GamePlayer> Players { get; } = [];
     public List<RoundAnswer> CurrentAnswers { get; } = [];
     public List<RoundVote> CurrentVotes { get; } = [];
     public RoundResultDto? LastRoundResult { get; set; }
@@ -59,7 +59,7 @@ public class RoundResultDto
     public List<Guid> ScoredVoterIds { get; set; } = [];
     public Guid? PenaltyUserId { get; set; }
     public string? PenaltyReason { get; set; }
-    public Dictionary<Guid, int> VoteCountsByAnswer { get; set; } = new();
+    public Dictionary<Guid, int> VoteCountsByAnswer { get; set; } = [];
 }
 
 public class GameStateDto

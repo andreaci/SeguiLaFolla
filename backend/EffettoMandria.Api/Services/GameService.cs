@@ -4,25 +4,12 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace EffettoMandria.Api.Services;
 
-public class GameService
+public class GameService(
+    InMemoryStore store,
+    QuestionService questions,
+    ScoringService scoring,
+    IHubContext<GameHub> hub)
 {
-    private readonly InMemoryStore _store;
-    private readonly QuestionService _questions;
-    private readonly ScoringService _scoring;
-    private readonly IHubContext<GameHub> _hub;
-
-    public GameService(
-        InMemoryStore store,
-        QuestionService questions,
-        ScoringService scoring,
-        IHubContext<GameHub> hub)
-    {
-        _store = store;
-        _questions = questions;
-        _scoring = scoring;
-        _hub = hub;
-    }
-
     public Game CreateGame(User director, string name)
     {
         EnsureNotInGame(director);
@@ -32,14 +19,14 @@ public class GameService
             Name = string.IsNullOrWhiteSpace(name) ? "Partita Mandria" : name.Trim(),
             DirectorUserId = director.Id
         };
-        _store.Games[game.Id] = game;
+        store.Games[game.Id] = game;
         director.CurrentGameId = game.Id;
         return game;
     }
 
     public Game JoinGame(User user, Guid gameId)
     {
-        if (!_store.Games.TryGetValue(gameId, out var game))
+        if (!store.Games.TryGetValue(gameId, out var game))
             throw new KeyNotFoundException("Partita non trovata.");
         if (game.Phase == GamePhase.Finished)
             throw new InvalidOperationException("Partita terminata.");
@@ -63,7 +50,7 @@ public class GameService
     public void LeaveGame(User user)
     {
         if (!user.CurrentGameId.HasValue) return;
-        if (_store.Games.TryGetValue(user.CurrentGameId.Value, out var game))
+        if (store.Games.TryGetValue(user.CurrentGameId.Value, out var game))
         {
             game.Players.Remove(user.Id);
             if (game.DirectorUserId == user.Id && game.Players.Count > 0)
@@ -99,7 +86,7 @@ public class GameService
             Name = game.Name,
             Phase = game.Phase.ToString().ToLowerInvariant(),
             CurrentQuestion = game.CurrentQuestion,
-            Players = GetParticipatingPlayers(game)
+            Players = [.. GetParticipatingPlayers(game)
                 .OrderByDescending(p => p.Score)
                 .ThenBy(p => p.DisplayName)
                 .Select(p => new PlayerStateDto
@@ -112,8 +99,7 @@ public class GameService
                     HasVoted = p.HasVoted,
                     AnsweredThisRound = game.CurrentAnswers.Any(a => a.AuthorUserId == p.UserId),
                     HasActivePenalty = game.ActivePenaltyUserId == p.UserId
-                })
-                .ToList(),
+                })],
             Answers = BuildAnswerDtos(game, viewer, isDirector, revealAuthors, voteCounts),
             LastRoundResult = game.LastRoundResult,
             ActivePenaltyUserId = game.ActivePenaltyUserId,
@@ -128,7 +114,7 @@ public class GameService
     }
 
     public IReadOnlyList<QuestionCategoryDto> GetQuestionCategories(Game game) =>
-        _questions.GetCategories(game.UsedQuestionIds);
+        questions.GetCategories(game.UsedQuestionIds);
 
     public async Task StartRoundAsync(Game game, string? category = null)
     {
@@ -136,12 +122,12 @@ public class GameService
             throw new InvalidOperationException("Impossibile avviare un turno in questa fase.");
 
         var normalizedCategory = string.IsNullOrWhiteSpace(category) ? null : category.Trim();
-        var question = _questions.PickRandom(game.UsedQuestionIds, normalizedCategory);
+        var question = questions.PickRandom(game.UsedQuestionIds, normalizedCategory);
         if (question is null)
         {
             if (normalizedCategory is not null)
             {
-                var label = _questions.GetCategories(game.UsedQuestionIds)
+                var label = questions.GetCategories(game.UsedQuestionIds)
                     .FirstOrDefault(c => string.Equals(c.Id, normalizedCategory, StringComparison.OrdinalIgnoreCase))
                     ?.Label ?? normalizedCategory;
                 throw new InvalidOperationException($"Nessuna domanda rimasta nella categoria «{label}».");
@@ -216,8 +202,8 @@ public class GameService
         if (game.Phase != GamePhase.Answering) return;
         foreach (var a in game.CurrentAnswers)
             a.IsHidden = false;
-        var result = _scoring.CalculateFromAnswers(game);
-        _scoring.ApplyRoundResult(game, result);
+        var result = scoring.CalculateFromAnswers(game);
+        scoring.ApplyRoundResult(game, result);
         game.LastRoundResult = result;
         game.Phase = GamePhase.Results;
         await NotifyGameAsync(game.Id);
@@ -235,7 +221,7 @@ public class GameService
     }
 
     public IReadOnlyList<GameSummaryDto> ListActiveGames() =>
-        _store.Games.Values
+        [.. store.Games.Values
             .Where(g => g.Phase != GamePhase.Finished)
             .OrderByDescending(g => g.CreatedAt)
             .Select(g => new GameSummaryDto
@@ -244,8 +230,7 @@ public class GameService
                 Name = g.Name,
                 Phase = g.Phase.ToString().ToLowerInvariant(),
                 PlayerCount = g.Players.Values.Count(p => p.UserId != g.DirectorUserId)
-            })
-            .ToList();
+            })];
 
     private static IEnumerable<GamePlayer> GetParticipatingPlayers(Game game) =>
         game.Players.Values.Where(p => p.UserId != game.DirectorUserId);
@@ -301,7 +286,7 @@ public class GameService
         if (game.Phase == GamePhase.Lobby || game.Phase == GamePhase.Answering)
         {
             if (!isDirector) return [];
-            return game.CurrentAnswers.Select(a =>
+            return [.. game.CurrentAnswers.Select(a =>
             {
                 game.Players.TryGetValue(a.AuthorUserId, out var author);
                 return new AnswerStateDto
@@ -312,14 +297,14 @@ public class GameService
                     AuthorName = author?.DisplayName,
                     RevealAuthor = true
                 };
-            }).ToList();
+            })];
         }
 
         var textCounts = game.CurrentAnswers
             .GroupBy(a => a.Text.Trim(), StringComparer.OrdinalIgnoreCase)
             .ToDictionary(g => g.Key, g => g.Count(), StringComparer.OrdinalIgnoreCase);
 
-        return game.CurrentAnswers.Select(a =>
+        return [.. game.CurrentAnswers.Select(a =>
         {
             game.Players.TryGetValue(a.AuthorUserId, out var author);
             var showAuthor = revealAuthors || isDirector;
@@ -334,11 +319,11 @@ public class GameService
                 AuthorName = showAuthor ? author?.DisplayName : null,
                 RevealAuthor = showAuthor
             };
-        }).ToList();
+        })];
     }
 
     public async Task NotifyGameAsync(Guid gameId) =>
-        await _hub.Clients.Group(gameId.ToString()).SendAsync("gameUpdated");
+        await hub.Clients.Group(gameId.ToString()).SendAsync("gameUpdated");
 }
 
 public class GameSummaryDto

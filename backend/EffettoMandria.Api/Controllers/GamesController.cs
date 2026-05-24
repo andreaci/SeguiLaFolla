@@ -6,21 +6,10 @@ namespace EffettoMandria.Api.Controllers;
 
 [ApiController]
 [Route("api/games")]
-public class GamesController : ControllerBase
+public class GamesController(InMemoryStore store, AuthService auth, GameService games) : ControllerBase
 {
-    private readonly InMemoryStore _store;
-    private readonly AuthService _auth;
-    private readonly GameService _games;
-
-    public GamesController(InMemoryStore store, AuthService auth, GameService games)
-    {
-        _store = store;
-        _auth = auth;
-        _games = games;
-    }
-
     [HttpGet]
-    public IActionResult List() => Ok(_games.ListActiveGames());
+    public IActionResult List() => Ok(games.ListActiveGames());
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateGameRequest req)
@@ -29,9 +18,9 @@ public class GamesController : ControllerBase
         if (user is null) return Unauthorized();
         try
         {
-            var game = _games.CreateGame(user, req.Name);
-            await _games.NotifyGameAsync(game.Id);
-            return Ok(_games.GetState(game, user));
+            var game = games.CreateGame(user, req.Name);
+            await games.NotifyGameAsync(game.Id);
+            return Ok(games.GetState(game, user));
         }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }
     }
@@ -39,10 +28,10 @@ public class GamesController : ControllerBase
     [HttpGet("{id:guid}")]
     public IActionResult Get(Guid id)
     {
-        var user = HttpContext.GetCurrentUser(_auth);
-        if (!_store.Games.TryGetValue(id, out var game))
+        var user = HttpContext.GetCurrentUser(auth);
+        if (!store.Games.TryGetValue(id, out var game))
             return NotFound(new { error = "Partita non trovata." });
-        return Ok(_games.GetState(game, user));
+        return Ok(games.GetState(game, user));
     }
 
     [HttpPost("{id:guid}/join")]
@@ -50,12 +39,12 @@ public class GamesController : ControllerBase
     {
         var user = TryGetUser();
         if (user is null) return Unauthorized();
-        if (!_store.Games.ContainsKey(id)) return NotFound(new { error = "Partita non trovata." });
+        if (!store.Games.ContainsKey(id)) return NotFound(new { error = "Partita non trovata." });
         try
         {
-            var game = _games.JoinGame(user, id);
-            await _games.NotifyGameAsync(game.Id);
-            return Ok(_games.GetState(game, user));
+            var game = games.JoinGame(user, id);
+            await games.NotifyGameAsync(game.Id);
+            return Ok(games.GetState(game, user));
         }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }
     }
@@ -67,7 +56,7 @@ public class GamesController : ControllerBase
         if (user is null) return Unauthorized();
         if (user.CurrentGameId != id)
             return BadRequest(new { error = "Non sei in questa partita." });
-        _games.LeaveGame(user);
+        games.LeaveGame(user);
         return NoContent();
     }
 
@@ -78,7 +67,7 @@ public class GamesController : ControllerBase
         if (user is null) return Unauthorized();
         if (!TryGetGame(id, out var game)) return NotFound(new { error = "Partita non trovata." });
         if (game.DirectorUserId != user.Id) return Forbid();
-        return Ok(_games.GetQuestionCategories(game));
+        return Ok(games.GetQuestionCategories(game));
     }
 
     [HttpPost("{id:guid}/round/start")]
@@ -90,8 +79,8 @@ public class GamesController : ControllerBase
         if (game.DirectorUserId != user.Id) return Forbid();
         try
         {
-            await _games.StartRoundAsync(game, req?.Categoria);
-            return Ok(_games.GetState(game, user));
+            await games.StartRoundAsync(game, req?.Categoria);
+            return Ok(games.GetState(game, user));
         }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }
     }
@@ -104,8 +93,8 @@ public class GamesController : ControllerBase
         if (!TryGetGame(id, out var game)) return NotFound(new { error = "Partita non trovata." });
         try
         {
-            await _games.SubmitAnswerAsync(game, user, req.Text);
-            return Ok(_games.GetState(game, user));
+            await games.SubmitAnswerAsync(game, user, req.Text);
+            return Ok(games.GetState(game, user));
         }
         catch (ArgumentException ex) { return BadRequest(new { error = ex.Message }); }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }
@@ -119,8 +108,8 @@ public class GamesController : ControllerBase
         if (!TryGetGame(id, out var game)) return NotFound(new { error = "Partita non trovata." });
         try
         {
-            await _games.SubmitVoteAsync(game, user, req.AnswerId);
-            return Ok(_games.GetState(game, user));
+            await games.SubmitVoteAsync(game, user, req.AnswerId);
+            return Ok(games.GetState(game, user));
         }
         catch (ArgumentException ex) { return BadRequest(new { error = ex.Message }); }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }
@@ -133,8 +122,8 @@ public class GamesController : ControllerBase
         if (user is null) return Unauthorized();
         if (!TryGetGame(id, out var game)) return NotFound(new { error = "Partita non trovata." });
         if (game.DirectorUserId != user.Id) return Forbid();
-        await _games.FinishRoundAsync(game);
-        return Ok(_games.GetState(game, user));
+        await games.FinishRoundAsync(game);
+        return Ok(games.GetState(game, user));
     }
 
     [HttpPost("{id:guid}/round/force-end")]
@@ -146,8 +135,8 @@ public class GamesController : ControllerBase
         if (game.DirectorUserId != user.Id) return Forbid();
         try
         {
-            await _games.ForceEndTurnAsync(game);
-            return Ok(_games.GetState(game, user));
+            await games.ForceEndTurnAsync(game);
+            return Ok(games.GetState(game, user));
         }
         catch (InvalidOperationException ex) { return Conflict(new { error = ex.Message }); }
     }
@@ -159,11 +148,11 @@ public class GamesController : ControllerBase
         if (user is null) return Unauthorized();
         if (!TryGetGame(id, out var game)) return NotFound(new { error = "Partita non trovata." });
         if (game.DirectorUserId != user.Id) return Forbid();
-        await _games.ReturnToLobbyAsync(game);
-        return Ok(_games.GetState(game, user));
+        await games.ReturnToLobbyAsync(game);
+        return Ok(games.GetState(game, user));
     }
 
-    private User? TryGetUser() => HttpContext.GetCurrentUser(_auth);
+    private User? TryGetUser() => HttpContext.GetCurrentUser(auth);
 
-    private bool TryGetGame(Guid id, out Game game) => _store.Games.TryGetValue(id, out game!);
+    private bool TryGetGame(Guid id, out Game game) => store.Games.TryGetValue(id, out game!);
 }

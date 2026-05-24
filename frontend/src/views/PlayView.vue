@@ -11,6 +11,8 @@ import AnswerForm from '../components/game/AnswerForm.vue'
 import RoundResultModal from '../components/game/RoundResultModal.vue'
 import PlayerName from '../components/game/PlayerName.vue'
 import PenaltyPoop from '../components/ui/PenaltyPoop.vue'
+import PenaltyPoopSplash from '../components/game/PenaltyPoopSplash.vue'
+import { usePenaltyPoopSplash } from '../composables/usePenaltyPoopSplash'
 import { hasActivePenalty } from '../utils/penalty'
 
 const route = useRoute()
@@ -22,6 +24,7 @@ const busy = ref(false)
 const submittedAnswerText = ref<string | null>(null)
 
 const game = computed(() => gameStore.state)
+const { showPoopSplash, onSplashDone } = usePenaltyPoopSplash(game)
 
 const roundKey = computed(
   () => `${game.value?.phase ?? ''}-${game.value?.currentQuestion?.id ?? ''}`
@@ -166,7 +169,9 @@ async function submitAnswer(text: string) {
   </section>
   <p v-else class="text-muted text-center">Caricamento…</p>
 
-  <RoundResultModal v-if="game?.phase === 'results'" :game="game" :game-id="gameId" />
+  <PenaltyPoopSplash v-if="showPoopSplash" @done="onSplashDone" />
+
+  <RoundResultModal v-if="game?.phase === 'results' && !showPoopSplash" :game="game" :game-id="gameId" />
 </template>
 
 <style scoped>

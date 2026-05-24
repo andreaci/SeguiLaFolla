@@ -8,22 +8,23 @@ public class QuestionService
 {
     private readonly List<Question> _questions;
     private readonly Random _random = new();
+    private static JsonSerializerOptions? json_options;
 
     public QuestionService(IWebHostEnvironment env)
     {
         var path = Path.Combine(env.ContentRootPath, "Data", "questions.json");
         var json = File.ReadAllText(path);
-        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        var raw = JsonSerializer.Deserialize<List<QuestionJson>>(json, options) ?? [];
-        _questions = raw.Select(Map).ToList();
+        json_options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var raw = JsonSerializer.Deserialize<List<QuestionJson>>(json, json_options) ?? [];
+        _questions = [.. raw.Select(Map)];
     }
 
     public IReadOnlyList<QuestionDto> GetAll() =>
-        _questions.Select(ToDto).ToList();
+        [.. _questions.Select(ToDto)];
 
     public IReadOnlyList<QuestionCategoryDto> GetCategories(HashSet<int> usedIds)
     {
-        return _questions
+        return [.. _questions
             .Where(q => !string.IsNullOrWhiteSpace(q.Categoria))
             .GroupBy(q => q.Categoria.Trim(), StringComparer.OrdinalIgnoreCase)
             .Select(g => new QuestionCategoryDto
@@ -32,18 +33,15 @@ public class QuestionService
                 Label = FormatCategoryLabel(g.Key),
                 Available = g.Count(q => !usedIds.Contains(q.Id))
             })
-            .OrderBy(c => c.Label, StringComparer.OrdinalIgnoreCase)
-            .ToList();
+            .OrderBy(c => c.Label, StringComparer.OrdinalIgnoreCase)];
     }
 
     public Question? PickRandom(HashSet<int> usedIds, string? category = null)
     {
-        var available = _questions.Where(q => !usedIds.Contains(q.Id)).ToList();
+        List<Question> available = [.. _questions.Where(q => !usedIds.Contains(q.Id))];
         if (!string.IsNullOrWhiteSpace(category))
         {
-            available = available
-                .Where(q => string.Equals(q.Categoria.Trim(), category.Trim(), StringComparison.OrdinalIgnoreCase))
-                .ToList();
+            available = [.. available.Where(q => string.Equals(q.Categoria.Trim(), category.Trim(), StringComparison.OrdinalIgnoreCase))];
         }
 
         if (available.Count == 0) return null;

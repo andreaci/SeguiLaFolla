@@ -6,11 +6,9 @@ namespace EffettoMandria.Api.Controllers;
 
 [ApiController]
 [Route("api/auth")]
-public class AuthController : ControllerBase
+public class AuthController(AuthService auth) : ControllerBase
 {
-    private readonly AuthService _auth;
-
-    public AuthController(AuthService auth) => _auth = auth;
+    private readonly AuthService _auth = auth;
 
     [HttpPost("register")]
     public IActionResult Register([FromBody] RegisterRequest req)

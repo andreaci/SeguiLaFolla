@@ -4,17 +4,13 @@ using EffettoMandria.Api.Models;
 
 namespace EffettoMandria.Api.Services;
 
-public class AuthService
+public class AuthService(InMemoryStore store)
 {
-    private readonly InMemoryStore _store;
-
-    public AuthService(InMemoryStore store) => _store = store;
-
     public (User user, Guid token) Register(RegisterRequest req)
     {
         if (string.IsNullOrWhiteSpace(req.Username) || string.IsNullOrWhiteSpace(req.Password))
             throw new ArgumentException("Username e password obbligatori.");
-        if (_store.UsernameIndex.ContainsKey(req.Username))
+        if (store.UsernameIndex.ContainsKey(req.Username))
             throw new InvalidOperationException("Username già in uso.");
 
         var user = new User
@@ -25,16 +21,16 @@ public class AuthService
             DisplayName = string.IsNullOrWhiteSpace(req.DisplayName) ? req.Username.Trim() : req.DisplayName.Trim(),
             IsGuest = false
         };
-        _store.Users[user.Id] = user;
-        _store.UsernameIndex[user.Username] = user.Id;
+        store.Users[user.Id] = user;
+        store.UsernameIndex[user.Username] = user.Id;
         return (user, CreateSession(user.Id));
     }
 
     public (User user, Guid token) Login(LoginRequest req)
     {
-        if (!_store.UsernameIndex.TryGetValue(req.Username, out var userId))
+        if (!store.UsernameIndex.TryGetValue(req.Username, out var userId))
             throw new UnauthorizedAccessException("Credenziali non valide.");
-        var user = _store.Users[userId];
+        var user = store.Users[userId];
         if (user.PasswordHash != HashPassword(req.Password))
             throw new UnauthorizedAccessException("Credenziali non valide.");
         return (user, CreateSession(user.Id));
@@ -50,26 +46,26 @@ public class AuthService
             DisplayName = req.DisplayName.Trim(),
             IsGuest = true
         };
-        _store.Users[user.Id] = user;
+        store.Users[user.Id] = user;
         return (user, CreateSession(user.Id));
     }
 
     public User? GetUserFromToken(Guid? token)
     {
         if (token is null || token == Guid.Empty) return null;
-        if (!_store.Sessions.TryGetValue(token.Value, out var session)) return null;
+        if (!store.Sessions.TryGetValue(token.Value, out var session)) return null;
         if (session.ExpiresAt < DateTime.UtcNow)
         {
-            _store.Sessions.TryRemove(token.Value, out _);
+            store.Sessions.TryRemove(token.Value, out _);
             return null;
         }
-        return _store.Users.GetValueOrDefault(session.UserId);
+        return store.Users.GetValueOrDefault(session.UserId);
     }
 
     private Guid CreateSession(Guid userId)
     {
         var token = Guid.NewGuid();
-        _store.Sessions[token] = new AuthSession
+        store.Sessions[token] = new AuthSession
         {
             Token = token,
             UserId = userId,

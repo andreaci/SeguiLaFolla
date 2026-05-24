@@ -55,10 +55,9 @@ public class ScoringService
         result.WinningAnswerText = winner.Text;
         result.WinningVoteCount = winner.Count;
         result.WinningAnswerId = winner.Answers[0].Id;
-        result.ScoredVoterIds = winner.Answers
+        result.ScoredVoterIds = [.. winner.Answers
             .Select(a => a.AuthorUserId)
-            .Distinct()
-            .ToList();
+            .Distinct()];
 
         return result;
     }
