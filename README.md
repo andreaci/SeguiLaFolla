@@ -1,6 +1,14 @@
-# Effetto Mandria
+# Segui la foll(i)a /Effetto Mandria/
 
 Applicazione web del gioco da tavolo **Effetto Mandria**: domande a risposta aperta o multipla, votazione collettiva e punteggio in stile “mandria”.
+
+# AI slop warning
+Parts of this project (including docs, copy, and some implementation drafts) is AI-assisted. Treat generated content as a starting point, not as guaranteed truth. While I checked what AI tools were doing, NEVER TRUST AI. 
+Well, this application is client only with a simple backend but no database, no personal data etcs... So, no actual danger, but still... be careful.
+
+NEVER TRUST GENERATIVE AI BLINDLY. Always review, test, and validate behavior before using it in production.
+
+
 
 ## Stack
 
