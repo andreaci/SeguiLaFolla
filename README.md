@@ -103,6 +103,30 @@ Apri `http://<IP-del-server>:5080` da PC e telefoni.
 
 Opzioni: `.\build.ps1 -OutputDir .\out` · `.\build.ps1 -SkipNpmInstall`
 
+### Release GitHub e immagine Docker
+
+Il workflow `.github/workflows/release.yml` viene eseguito quando viene pubblicato un tag semantico `v*`:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Il workflow crea una GitHub Release con l'archivio dell'applicazione e pubblica l'immagine su GitHub Container Registry:
+
+```text
+ghcr.io/andreaci/seguilafolla:1.0.0
+ghcr.io/andreaci/seguilafolla:latest
+```
+
+Esecuzione del container:
+
+```bash
+docker run --rm -p 5080:5080 ghcr.io/andreaci/seguilafolla:latest
+```
+
+Può anche essere avviato manualmente dalla pagina **Actions**, indicando il tag della release. Le prerelease, ad esempio `v1.0.0-beta.1`, non aggiornano il tag Docker `latest`.
+
 ## Struttura
 
 ```

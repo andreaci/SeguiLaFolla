@@ -1,0 +1,13 @@
+.git
+.github
+.vs
+**/bin
+**/obj
+**/node_modules
+frontend/dist
+publish
+out
+*.user
+*.suo
+Dockerfile*
+README.md
