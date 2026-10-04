@@ -22,8 +22,11 @@ function apiProxy(env: Record<string, string>) {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const proxy = apiProxy(env)
+  const configuredBase = env.VITE_BASE_PATH || '/'
+  const base = `/${configuredBase.replace(/^\/+|\/+$/g, '')}${configuredBase === '/' ? '' : '/'}`
 
   return {
+    base,
     plugins: [vue()],
     server: {
       host: '0.0.0.0',

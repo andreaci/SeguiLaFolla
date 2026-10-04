@@ -1,11 +1,13 @@
 FROM node:24-alpine AS frontend-build
 
 WORKDIR /src/frontend
+ARG VITE_BASE_PATH=/
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 
 COPY frontend/ ./
 ENV VITE_API_BASE_URL=""
+ENV VITE_BASE_PATH=${VITE_BASE_PATH}
 RUN npm run build
 
 

@@ -16,7 +16,7 @@ const gameStore = useGameStore()
 const gameId = route.params.id as string
 
 const game = computed(() => gameStore.state)
-const joinUrl = computed(() => `${window.location.origin}/entra/${gameId}`)
+const joinUrl = computed(() => `${window.location.origin}${import.meta.env.BASE_URL}entra/${gameId}`)
 
 onMounted(async () => {
   if (!localStorage.getItem('mandria_token')) {

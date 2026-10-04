@@ -17,6 +17,8 @@ param(
 
     [string]$OutputDir = "",
 
+    [string]$BasePath = "/",
+
     [switch]$SkipNpmInstall
 )
 
@@ -64,6 +66,7 @@ try {
 
     # .env.production + override esplicito per il build di deploy
     $env:VITE_API_BASE_URL = ""
+    $env:VITE_BASE_PATH = $BasePath
     Remove-Item Env:VITE_DEV_PROXY_TARGET -ErrorAction SilentlyContinue
 
     npm run build

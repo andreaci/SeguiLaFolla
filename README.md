@@ -50,10 +50,13 @@ VITE_DEV_PROXY_TARGET=http://localhost:5230
 
 ### Produzione
 
-| Scenario | `VITE_API_BASE_URL` |
-|----------|---------------------|
-| UI servita dal backend (`wwwroot`) | vuoto |
-| UI e API su host diversi | URL completo dell’API |
+| Scenario | `VITE_API_BASE_URL` | `VITE_BASE_PATH` |
+|----------|---------------------|------------------|
+| UI servita dal backend (`wwwroot`) alla radice | vuoto | `/` (default) |
+| UI sotto un sottopercorso, es. `/seguilafolla` | vuoto | `/seguilafolla/` |
+| UI e API su host diversi | URL completo dell’API | percorso di mount della UI |
+
+`VITE_BASE_PATH` è un valore di **build** (Vite), non una variabile runtime. Per la build PowerShell usare `.\build.ps1 -BasePath /seguilafolla/`. Per Docker, il workflow Release passa `/seguilafolla/` come build arg `VITE_BASE_PATH`; il Dockerfile mantiene `/` come default per le build manuali. Il reverse proxy deve esporre la UI a quel prefisso e inoltrare `/seguilafolla/api/*` e `/seguilafolla/hubs/*` all’app rimuovendo il prefisso prima di passarli ad ASP.NET Core.
 
 CORS sul backend serve solo per accesso diretto all’API senza proxy (`Cors:AllowedOrigins` in `appsettings.Development.json`).
 
@@ -86,7 +89,7 @@ Da root del repo (PowerShell):
 
 Lo script:
 
-1. Compila il **frontend** con `VITE_API_BASE_URL` vuoto (stesso schema del **reverse proxy Vite** in dev: tutto su un host, `/api` e `/hubs`).
+1. Compila il **frontend** con `VITE_API_BASE_URL` vuoto (stesso schema del **reverse proxy Vite** in dev: tutto su un host, `/api` e `/hubs`), usando `VITE_BASE_PATH` per il prefisso di mount opzionale.
 2. Esegue **`dotnet publish`** del backend in `./publish`.
 3. Copia `frontend/dist` in `publish/wwwroot`.
 

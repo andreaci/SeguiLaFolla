@@ -10,7 +10,10 @@ export function getApiBaseUrl(): string {
 export function apiUrl(path: string): string {
   const base = getApiBaseUrl()
   const normalized = path.startsWith('/') ? path : `/${path}`
-  return base ? `${base}${normalized}` : normalized
+  if (base) return `${base}${normalized}`
+
+  const appBase = import.meta.env.BASE_URL.replace(/\/$/, '')
+  return `${appBase}${normalized}`
 }
 
 export function hubUrl(): string {
