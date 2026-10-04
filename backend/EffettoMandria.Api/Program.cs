@@ -34,6 +34,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+var configuredPathBase = builder.Configuration["APP_BASE_PATH"]?.Trim();
+if (!string.IsNullOrWhiteSpace(configuredPathBase) && configuredPathBase != "/")
+{
+    app.UsePathBase($"/{configuredPathBase.Trim('/')}");
+}
+
 app.UseCors();
 app.UseDefaultFiles();
 app.UseStaticFiles();

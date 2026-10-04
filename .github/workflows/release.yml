@@ -106,6 +106,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
           build-args: |
             VITE_BASE_PATH=/seguilafolla/
+            APP_BASE_PATH=/seguilafolla
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

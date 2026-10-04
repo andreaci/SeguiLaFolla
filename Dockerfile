@@ -29,6 +29,9 @@ COPY --from=frontend-build /src/frontend/dist/ /app/publish/wwwroot/
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine AS final
 
+ARG APP_BASE_PATH=/
+ENV APP_BASE_PATH=${APP_BASE_PATH}
+
 WORKDIR /app
 COPY --from=backend-build /app/publish/ ./
 

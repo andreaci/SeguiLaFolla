@@ -56,7 +56,7 @@ VITE_DEV_PROXY_TARGET=http://localhost:5230
 | UI sotto un sottopercorso, es. `/seguilafolla` | vuoto | `/seguilafolla/` |
 | UI e API su host diversi | URL completo dell’API | percorso di mount della UI |
 
-`VITE_BASE_PATH` è un valore di **build** (Vite), non una variabile runtime. Per la build PowerShell usare `.\build.ps1 -BasePath /seguilafolla/`. Per Docker, il workflow Release passa `/seguilafolla/` come build arg `VITE_BASE_PATH`; il Dockerfile mantiene `/` come default per le build manuali. Il reverse proxy deve esporre la UI a quel prefisso e inoltrare `/seguilafolla/api/*` e `/seguilafolla/hubs/*` all’app rimuovendo il prefisso prima di passarli ad ASP.NET Core.
+`VITE_BASE_PATH` è un valore di **build** (Vite), non una variabile runtime. Per la build PowerShell usare `.\build.ps1 -BasePath /seguilafolla/`. Per Docker, il workflow Release passa `/seguilafolla/` come build arg `VITE_BASE_PATH` e `/seguilafolla` come `APP_BASE_PATH`; il Dockerfile mantiene `/` come default per le build manuali. ASP.NET Core legge `APP_BASE_PATH` per applicare il prefisso alle route. Il reverse proxy può inoltrarlo intatto oppure rimuoverlo prima di inoltrare le richieste. Il reverse proxy deve esporre la UI a quel prefisso e inoltrare le chiamate API e SignalR.
 
 CORS sul backend serve solo per accesso diretto all’API senza proxy (`Cors:AllowedOrigins` in `appsettings.Development.json`).
 
