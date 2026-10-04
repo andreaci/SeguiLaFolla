@@ -40,6 +40,7 @@ if (!string.IsNullOrWhiteSpace(configuredPathBase) && configuredPathBase != "/")
     app.UsePathBase($"/{configuredPathBase.Trim('/')}");
 }
 
+app.UseRouting();
 app.UseCors();
 app.UseDefaultFiles();
 app.UseStaticFiles();
